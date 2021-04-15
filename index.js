@@ -57,31 +57,44 @@ function analyzeAdventure(fileText) {
 
   const zone = getZone(advText[0].split(/_/)[1]);
 
-  const events = [];
+  const worldEvents = [];
   for (let i = 1; i < advText.length; i++) {
     const eventInfo = advText[i].split(/\/Quest_/)[1].split(/_/);
     // console.log(eventInfo);
     switch (eventInfo[0].toLowerCase()) {
       case "event":
-        events[events.length - 1].eventDetails.push({
-          eventType: "Item Drop",
-          eventName: eventInfo[1].replace(/([A-Z])/g, " $1").trim(),
-        });
+        const itemEvent = {};
+        if (eventInfo[1].toLowerCase() === "sketterling") {
+          itemEvent.eventType = "Sketterling Temple";
+          itemEvent.eventName = `${
+            fileText.includes("Bug_Armored")
+              ? (itemEvent.eventName = "Black")
+              : (itemEvent.eventName = "Red")
+          } Vikorian Beetle`;
+        } else {
+          itemEvent.eventType = "Item Drop";
+          itemEvent.eventName = eventInfo[1]
+            .replace(/([A-Z])/g, " $1")
+            .replace(" Of", " of")
+            .replace(" The", " the")
+            .trim();
+        }
+        worldEvents[worldEvents.length - 1].eventDetails.push(itemEvent);
         break;
       case "boss":
         const bossInfo = getBossInfo(eventInfo[1]);
-        events.push(bossInfo);
+        worldEvents.push(bossInfo);
         break;
       case "smalld":
         const dungeonInfo = getDungeonInfo(eventInfo[1]);
-        events.push(dungeonInfo);
+        worldEvents.push(dungeonInfo);
         break;
       case "miniboss":
         const minibossInfo = getMinibossInfo(eventInfo[1]);
-        events.push(minibossInfo);
+        worldEvents.push(minibossInfo);
         break;
       case "overworldpoi":
-        events.push({
+        worldEvents.push({
           location: "Overworld",
           eventDetails: [
             {
@@ -93,7 +106,7 @@ function analyzeAdventure(fileText) {
         break;
       case "cryptolith":
         if (zone === "Rhom") {
-          events[events.length - 1].eventDetails.push({
+          worldEvents[worldEvents.length - 1].eventDetails.push({
             eventType: "Item Drop",
             eventName: "Soul Link",
           });
@@ -104,20 +117,19 @@ function analyzeAdventure(fileText) {
         throw new Error("Invalid File Input");
     }
   }
-  console.log(events);
 
-  for (worldEvent of events) {
-    for (e of worldEvent.eventDetails) {
+  for (const worldEvent of worldEvents) {
+    for (const details of worldEvent.eventDetails) {
       $("#worldInfo").append(
         `<tr>
         <td>${zone}: ${worldEvent.location}</td>
-        <td>${e.eventType}</td>
-        <td>${e.eventName}</td>
+        <td>${details.eventType}</td>
+        <td>${details.eventName}</td>
         </tr>`
       );
     }
   }
-  $("#world").show();
+  $("#worldDescriptor").show();
 }
 
 function getZone(location) {
@@ -137,10 +149,11 @@ function getZone(location) {
   }
 }
 
+// TODO item match
 // function getItemInfo(event) {}
 
 function getBossInfo(event) {
-  // TODO use a Map instead of a switch statement
+  // TODO use a Map/Dict instead of a switch statement
   switch (event.toLowerCase()) {
     // Earth
     case "rootdragon":
@@ -208,7 +221,7 @@ function getBossInfo(event) {
 }
 
 function getDungeonInfo(event) {
-  // TODO use a Map instead of a switch statement
+  // TODO use a Map/Dict instead of a switch statement
   switch (event.toLowerCase()) {
     // Earth
     case "huntershideout":
@@ -279,7 +292,7 @@ function getDungeonInfo(event) {
         eventDetails: [
           {
             eventType: "Quest Reward",
-            eventName: "The Root Shrine: Twisted Set (Craft at Shrine)",
+            eventName: "The Root Shrine: Twisted Armor Set (Craft at Shrine)",
           },
         ],
       };
@@ -295,7 +308,7 @@ function getDungeonInfo(event) {
           },
           {
             eventType: "Quest Reward",
-            eventName: "Armor Vault: Akari Set",
+            eventName: "Armor Vault: Akari Armor Set",
           },
         ],
       };
@@ -398,7 +411,7 @@ function getDungeonInfo(event) {
         eventDetails: [
           {
             eventType: "Quest Reward",
-            eventName: "The Ravager Shrine: Elder Set",
+            eventName: "The Ravager Shrine: Elder Armor Set",
           },
         ],
       };
@@ -469,7 +482,7 @@ function getMinibossInfo(event) {
           },
           {
             eventType: "Item Drop",
-            eventName: "Leto's Armor",
+            eventName: "Leto's Armor Set",
           },
         ],
       };
@@ -617,35 +630,9 @@ function getMinibossInfo(event) {
   }
 }
 
-// function getPointOfInterestInfo(event, location) {
+// TODO Switch/Dict for Points of Interest
+// function getPointOfInterestInfo(event) {
 //   switch (event.toLowerCase()) {
-//     // Earth
-//     // case "cryptolith":
-//     //   const constructedEvent = {
-//     //     location,
-//     //     eventDetails: [
-//     //       {
-//     //         eventType: "Point of Interest",
-//     //         eventName: event.replace(/([A-Z])/g, " $1").trim(),
-//     //       },
-//     //     ],
-//     //   };
-//     //   if (zone == "Rhom")
-//     //     constructedEvent.eventDetails.push({
-//     //       eventType: "Item Drop",
-//     //       eventName: "Soul Link",
-//     //     });
-//     //   return constructedEvent;
-//     // default:
-//     //   return {
-//     //     location,
-//     //     eventDetails: [
-//     //       {
-//     //         eventType: "Point of Interest",
-//     //         eventName: event.replace(/([A-Z])/g, " $1").trim(),
-//     //       },
-//     //     ],
-//     //   };
 //   }
 // }
 
