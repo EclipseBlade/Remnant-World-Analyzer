@@ -1,0 +1,39 @@
+body {
+  /* background: url(imgs/RemnantBackground.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1;
+  text-align: center;
+  padding: 2rem 0 3rem 0;
+}
+
+.descriptor {
+  margin: 0;
+}
+
+.margin-2 {
+  margin-bottom: 2rem;
+}
+
+.container-narrow {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+th,
+td {
+  /* background-color: blue; */
+  color: white;
+}
+
+#world {
+  display: none;
+}
