@@ -17,20 +17,19 @@
   </head>
 
   <body>
-    <!-- TODO 2 Columns  -->
-    <div class="container-narrow">
-      <h1>Remnant: From the Ashes World Analyzer</h1>
-
-      <p class="directions margin-2">
+    <h1>Remnant: From the Ashes World Analyzer</h1>
+    <!-- TODO 2 Columns maybe flexbox -->
+    <div class="narrow">
+      <p class="mb-3">
         How to use:<br />
         Navigate to %LOCALAPPDATA%/Remnant/Saved/SaveGames and locate the file
         named something like save_0.bak or save_0.sav. Upload to see what you
         rolled.
       </p>
 
-      <div>
-        <p class="descriptor">Known Issues:</p>
-        <ul class="list-style margin-2">
+      <div class="mb-3 issues">
+        <p>Known Issues:</p>
+        <ul class="list-style">
           <li>Campaign does not work</li>
           <li>Reisum does not work</li>
           <li>
@@ -41,11 +40,11 @@
       </div>
 
       <form onsubmit="return submitForm(event)">
-        <div class="margin-2">
+        <div class="mb-3">
           <label for="modeSelect" class="form-label">Choose Game Mode</label>
           <select
             id="modeSelect"
-            class="form-select mb-3 w-50"
+            class="form-select w-50"
             aria-label="Default select example"
             required
           >
@@ -53,14 +52,18 @@
             <option value="1">Campaign</option>
             <option value="2">Adventure</option>
           </select>
+          <div class="invalid-feedback">Not supported yet.</div>
         </div>
 
-        <div class="margin-2">
+        <div class="mb-3">
           <label for="formFile" class="form-label">Upload Save File Here</label>
           <input class="form-control w-50" type="file" id="formFile" required />
+          <div class="invalid-feedback">Please upload a valid file.</div>
         </div>
 
-        <button class="btn btn-primary margin-2" type="submit">Explore!</button>
+        <button class="btn btn-primary mb-3 mt-2" type="submit">
+          Explore!
+        </button>
       </form>
 
       <table id="worldDescriptor" class="table">

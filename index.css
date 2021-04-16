@@ -12,26 +12,21 @@ h1 {
   font-size: 50px;
   line-height: 1;
   text-align: center;
-  padding: 2rem 0 3rem 0;
-}
-
-.descriptor {
-  margin: 0;
-}
-
-.margin-2 {
-  margin-bottom: 2rem;
-}
-
-.container-narrow {
-  margin: 0 auto;
-  max-width: 50%;
+  margin: 2rem 0;
 }
 
 th,
 td {
-  /* background-color: blue; */
   color: white;
+}
+
+.narrow {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+.issues > p {
+  margin: 0;
 }
 
 #worldDescriptor {

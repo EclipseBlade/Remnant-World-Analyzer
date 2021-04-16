@@ -18,20 +18,28 @@ function submitForm(event) {
   const reader = new FileReader();
   reader.readAsText(file);
   reader.onload = function () {
-    if ($("#modeSelect").val() === "1") {
-      analyzeCampaign(reader.result);
-    } else {
-      analyzeAdventure(reader.result);
+    try {
+      if ($("#modeSelect").val() === "1") {
+        // analyzeCampaign(reader.result);
+        $("#modeSelect").addClass("is-invalid");
+      } else {
+        $("#modeSelect").removeClass("is-invalid");
+        analyzeAdventure(reader.result);
+      }
+    } catch (error) {
+      console.log(error);
+      $("#formFile").addClass("is-invalid");
     }
   };
 
   reader.onerror = function () {
     console.log(reader.error);
+    $("#formFile").addClass("is-invalid");
   };
 }
 
 // TODO complete campain analysis
-function analyzeCampaign(fileText) {}
+// function analyzeCampaign(fileText) {}
 
 function analyzeAdventure(fileText) {
   const startIndex = fileText.lastIndexOf("Adventure");
@@ -60,17 +68,15 @@ function analyzeAdventure(fileText) {
   const worldEvents = [];
   for (let i = 1; i < advText.length; i++) {
     const eventInfo = advText[i].split(/\/Quest_/)[1].split(/_/);
-    // console.log(eventInfo);
+    console.log(eventInfo);
     switch (eventInfo[0].toLowerCase()) {
       case "event":
         const itemEvent = {};
         if (eventInfo[1].toLowerCase() === "sketterling") {
           itemEvent.eventType = "Sketterling Temple";
-          itemEvent.eventName = `${
-            fileText.includes("Bug_Armored")
-              ? (itemEvent.eventName = "Black")
-              : (itemEvent.eventName = "Red")
-          } Vikorian Beetle`;
+          itemEvent.eventName = fileText.includes("Bug_Armored")
+            ? (itemEvent.eventName = "Black Vikorian Beetle")
+            : (itemEvent.eventName = "Red Vikorian Beetle");
         } else {
           itemEvent.eventType = "Item Drop";
           itemEvent.eventName = eventInfo[1]
@@ -93,6 +99,10 @@ function analyzeAdventure(fileText) {
         const minibossInfo = getMinibossInfo(eventInfo[1]);
         worldEvents.push(minibossInfo);
         break;
+      case "siege":
+        const siegeInfo = getSiegeInfo(eventInfo[1]);
+        worldEvents.push(siegeInfo);
+        break;
       case "overworldpoi":
         worldEvents.push({
           location: "Overworld",
@@ -113,8 +123,7 @@ function analyzeAdventure(fileText) {
         }
         break;
       default:
-        console.log(eventInfo[0]);
-        throw new Error("Invalid File Input");
+        throw new Error("Cannot Read Event: " + eventInfo[0]);
     }
   }
 
@@ -130,6 +139,7 @@ function analyzeAdventure(fileText) {
       );
     }
   }
+  $("#formFile").removeClass("is-invalid");
   $("#worldDescriptor").show();
 }
 
@@ -340,6 +350,10 @@ function getDungeonInfo(event) {
         location: "Strange Pass",
         eventDetails: [
           {
+            eventType: "Mini Boss/NPC",
+            eventName: "Mar'Gosh",
+          },
+          {
             eventType: "Quest Reward",
             eventName: "Brain Bug: Gift of the Iskal",
           },
@@ -385,6 +399,20 @@ function getDungeonInfo(event) {
       };
 
     // Yaesha
+    case "blinkthief":
+      return {
+        location: "The Verdant Strand",
+        eventDetails: [
+          {
+            eventType: "Mini Boss",
+            eventName: "Blink Thief",
+          },
+          {
+            eventType: "Item Drop",
+            eventName: "Ricochet Rifle",
+          },
+        ],
+      };
     case "doeshrine":
       return {
         location: "Widow's Vestry",
@@ -404,23 +432,10 @@ function getDungeonInfo(event) {
             eventType: "Quest Reward",
             eventName: "Guardian Shrine: Radiant Visage",
           },
-        ],
-      };
-    case "wolfshrine":
-      return {
-        location: "Matyr's Sanctuary",
-        eventDetails: [
           {
             eventType: "Quest Reward",
-            eventName: "The Ravager Shrine: Elder Armor Set",
+            eventName: "Guardian Shrine: Trait Book",
           },
-        ],
-      };
-    case "therisen":
-      return {
-        location: "Ahanae's Lament",
-        eventDetails: [
-          { eventType: "Quest Reward", eventName: "The Risen: Soul Anchor" },
         ],
       };
     // Reisum
@@ -593,16 +608,6 @@ function getMinibossInfo(event) {
           },
         ],
       };
-    case "blinktheif":
-      return {
-        location: "The Verdant Strand",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Blink Theif",
-          },
-        ],
-      };
     case "stormcaller":
       return {
         location: "Heretic's Nest",
@@ -628,6 +633,30 @@ function getMinibossInfo(event) {
     // TODO Reisum
     default:
       throw new Error("Cannot Read Miniboss: " + event);
+  }
+}
+
+function getSiegeInfo(event) {
+  switch (event.toLowerCase()) {
+    case "therisen":
+      return {
+        location: "Ahanae's Lament",
+        eventDetails: [
+          { eventType: "Quest Reward", eventName: "The Risen: Soul Anchor" },
+        ],
+      };
+    case "wolfshrine":
+      return {
+        location: "Matyr's Sanctuary",
+        eventDetails: [
+          {
+            eventType: "Quest Reward",
+            eventName: "The Ravager Shrine: Elder Armor Set",
+          },
+        ],
+      };
+    default:
+      throw new Error("Cannot Read Siege: " + event);
   }
 }
 
