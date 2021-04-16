@@ -118,6 +118,7 @@ function analyzeAdventure(fileText) {
     }
   }
 
+  $("#worldInfo").empty();
   for (const worldEvent of worldEvents) {
     for (const details of worldEvent.eventDetails) {
       $("#worldInfo").append(
