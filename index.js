@@ -33,6 +33,7 @@ async function submitForm(event) {
 
 async function analyzeAdventure(fileText) {
   // Adventure mode save file items and events can be read after the last mention of "Adventure"
+  // hzla found this trick and used it in his analyzer
   const startIndex = fileText.lastIndexOf("Adventure");
   if (startIndex === -1) {
     throw new Error("Invalid File Input");
@@ -79,6 +80,8 @@ async function analyzeAdventure(fileText) {
             ? (itemEvent.eventName = "Black Vikorian Beetle")
             : (itemEvent.eventName = "Red Vikorian Beetle");
         } else {
+          // This is a normal item
+          // This is not finished it will be more descriptive later on
           itemEvent.eventType = "Item Drop";
           itemEvent.eventName = eventInfo[1].replace(/([A-Z])/g, " $1").trim();
         }
@@ -121,6 +124,7 @@ async function analyzeAdventure(fileText) {
       // A overworldpoi is a point of interest like Mud Tooth, the Monolith, the Abandoned Throne, the Flautist, and the Cryptolith
       // A point of interest is sometimes refered to as a world event
       case "overworldpoi":
+        // This is not finished it will be more descriptive later on
         worldEvents.push({
           zone: "Overworld",
           eventDetails: [
@@ -225,11 +229,15 @@ async function getSiegeInfo() {
   return siegeInfo;
 }
 
-// TODO Points of Interest
+// TODO Points of Interest json dictionary
 // function getPointOfInterestInfo(event) {
 //   switch (event.toLowerCase()) {
 //   }
 // }
+
+// These are the names of various zones and sub locations
+// I got these from hzla's world analyzer
+// Will be deleted later after this project is refined to include all of these areas
 
 // "City Overworld Zone1": "Fairview"
 // "City Overworld Zone2": "Westcourt"
