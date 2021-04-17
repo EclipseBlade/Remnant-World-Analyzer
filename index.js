@@ -11,20 +11,20 @@
 //   "Snow Overworld Zone2": "DeepfrostExpanse",
 // };
 
-function submitForm(event) {
+async function submitForm(event) {
   event.preventDefault();
   const file = $("#formFile")[0].files[0];
 
   const reader = new FileReader();
   reader.readAsText(file);
-  reader.onload = () => {
+  reader.onload = async () => {
     try {
       if ($("#modeSelect").val() === "1") {
         // analyzeCampaign(reader.result);
         $("#modeSelect").addClass("is-invalid");
       } else {
         $("#modeSelect").removeClass("is-invalid");
-        analyzeAdventure(reader.result);
+        await analyzeAdventure(reader.result);
       }
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ function submitForm(event) {
 // TODO complete campain analysis
 // function analyzeCampaign(fileText) {}
 
-function analyzeAdventure(fileText) {
+async function analyzeAdventure(fileText) {
   const startIndex = fileText.lastIndexOf("Adventure");
   if (startIndex === -1) {
     throw new Error("Invalid File Input");
@@ -63,12 +63,17 @@ function analyzeAdventure(fileText) {
 
   // console.log(advText);
 
-  const zone = getZone(advText[0].split(/_/)[1]);
+  const location = getLocation(advText[0].split(/_/)[1]);
 
   const worldEvents = [];
+  const bossInfo = await getBossInfo();
+  const dungeonInfo = await getDungeonInfo();
+  const minibossInfo = await getMinibossInfo();
+  const siegeInfo = await getSiegeInfo();
+
   for (let i = 1; i < advText.length; i++) {
     const eventInfo = advText[i].split(/\/Quest_/)[1].split(/_/);
-    console.log(eventInfo);
+    // console.log(eventInfo);
     switch (eventInfo[0].toLowerCase()) {
       case "event":
         const itemEvent = {};
@@ -88,24 +93,20 @@ function analyzeAdventure(fileText) {
         worldEvents[worldEvents.length - 1].eventDetails.push(itemEvent);
         break;
       case "boss":
-        const bossInfo = getBossInfo(eventInfo[1]);
-        worldEvents.push(bossInfo);
+        worldEvents.push(bossInfo[eventInfo[1]]);
         break;
       case "smalld":
-        const dungeonInfo = getDungeonInfo(eventInfo[1]);
-        worldEvents.push(dungeonInfo);
+        worldEvents.push(dungeonInfo[eventInfo[1]]);
         break;
       case "miniboss":
-        const minibossInfo = getMinibossInfo(eventInfo[1]);
-        worldEvents.push(minibossInfo);
+        worldEvents.push(minibossInfo[eventInfo[1]]);
         break;
       case "siege":
-        const siegeInfo = getSiegeInfo(eventInfo[1]);
-        worldEvents.push(siegeInfo);
+        worldEvents.push(siegeInfo[eventInfo[1]]);
         break;
       case "overworldpoi":
         worldEvents.push({
-          location: "Overworld",
+          zone: "Overworld",
           eventDetails: [
             {
               eventType: "Point of Interest",
@@ -115,7 +116,7 @@ function analyzeAdventure(fileText) {
         });
         break;
       case "cryptolith":
-        if (zone === "Rhom") {
+        if (location === "Rhom") {
           worldEvents[worldEvents.length - 1].eventDetails.push({
             eventType: "Item Drop",
             eventName: "Soul Link",
@@ -132,8 +133,8 @@ function analyzeAdventure(fileText) {
     for (const details of worldEvent.eventDetails) {
       $("#worldInfo").append(
         `<tr>
-        <td>${zone}</td>
-        <td>${worldEvent.location}</td>
+        <td>${location}</td>
+        <td>${worldEvent.zone}</td>
         <td>${details.eventType}</td>
         <td>${details.eventName}</td>
         </tr>`
@@ -144,7 +145,7 @@ function analyzeAdventure(fileText) {
   $("#worldDescriptor").show();
 }
 
-function getZone(location) {
+function getLocation(location) {
   switch (location.toLowerCase()) {
     case "city":
       return "Earth";
@@ -164,507 +165,28 @@ function getZone(location) {
 // TODO item match
 // function getItemInfo(event) {}
 
-function getBossInfo(event) {
-  // TODO use a Map/Dict instead of a switch statement
-  switch (event.toLowerCase()) {
-    // Earth
-    case "rootdragon":
-      return {
-        location: "The Ash Yard",
-        eventDetails: [{ eventType: "World Boss", eventName: "Singe" }],
-      };
-    case "rootent":
-      return {
-        location: "The Choking Hollow",
-        eventDetails: [{ eventType: "World Boss", eventName: "The Ent" }],
-      };
-
-    // Rhom
-    case "theharrow":
-      return {
-        location: "The Bunker",
-        eventDetails: [{ eventType: "World Boss", eventName: "The Harrow" }],
-      };
-    case "wastelandguardian":
-      return {
-        location: "Loom of the Black Sun",
-        eventDetails: [{ eventType: "World Boss", eventName: "Claviger" }],
-      };
-
-    // Corsus
-    case "fatty":
-      return {
-        location: "The Shack",
-        eventDetails: [
-          { eventType: "World Boss", eventName: "The Unclean One" },
-        ],
-      };
-    case "swampguardian":
-      return {
-        location: "The Grotto",
-        eventDetails: [{ eventType: "World Boss", eventName: "Ixillis" }],
-      };
-
-    // Yaesha
-    case "totemfather":
-      return {
-        location: "The Scalding Glade",
-        eventDetails: [{ eventType: "World Boss", eventName: "Totem Father" }],
-      };
-    case "wolf":
-      return {
-        location: "Ravager's Haunt",
-        eventDetails: [{ eventType: "World Boss", eventName: "The Ravager" }],
-      };
-    // Reisum
-    case "ratrider":
-      return {
-        location: "Crimson Hold",
-        eventDetails: [
-          {
-            eventType: "World Boss",
-            eventName: "Brudvaak, the Rider and Vargr",
-          },
-        ],
-      };
-    default:
-      throw new Error("Cannot Read Boss: " + event);
-  }
+async function getBossInfo() {
+  const response = await fetch("/Remnant-World-Analyzer/data/bosses.json");
+  const bossInfo = await response.json();
+  return bossInfo;
 }
 
-function getDungeonInfo(event) {
-  // TODO use a Map/Dict instead of a switch statement
-  switch (event.toLowerCase()) {
-    // Earth
-    case "huntershideout":
-      return {
-        location: "Hidden Grotto",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "Hunter's Hideout: Hunting Pistol",
-          },
-        ],
-      };
-    case "lastwill":
-      return {
-        location: "Sorrow's Field",
-        eventDetails: [
-          {
-            eventType: "Quest Item",
-            eventName: "Supply Run: Monkey Key",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Supply Run: Assault Rifle",
-          },
-        ],
-      };
-    case "lizandliz":
-      return {
-        location: "The Warren",
-        eventDetails: [
-          {
-            eventType: "Quest Item",
-            eventName: "A Tale of Two Liz's: Liz's Key (Defend Both Liz's)",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "A Tale of Two Liz's: Chicago Typewriter",
-          },
-        ],
-      };
-    case "madmerchant":
-      return {
-        location: "Junktown",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "Showdown at Junk Town: Twisted Mask",
-          },
-        ],
-      };
-    case "rootcultist":
-      return {
-        location: "Marrow Pass",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "Cult of the Root: Root Circlet",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Cult of the Root: Braided Thorns",
-          },
-        ],
-      };
-    case "rootshrine":
-      return {
-        location: "The Gallows",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "The Root Shrine: Twisted Armor Set (Craft at Shrine)",
-          },
-        ],
-      };
-
-    // Rhom
-    case "armorvault":
-      return {
-        location: "Vault of the Heralds",
-        eventDetails: [
-          {
-            eventType: "Quest Item",
-            eventName: "Armor Vault: Glowing Rod",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Armor Vault: Akari Armor Set",
-          },
-        ],
-      };
-    case "thecleanroom":
-      return {
-        location: "The Purge Hall",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "The Clean Room: Wastelander Flail",
-          },
-        ],
-      };
-
-    // Corsus
-    case "brainbug":
-      return {
-        location: "Strange Pass",
-        eventDetails: [
-          {
-            eventType: "Mini Boss/NPC",
-            eventName: "Mar'Gosh",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Brain Bug: Gift of the Iskal",
-          },
-        ],
-      };
-    case "fetidpool":
-      return {
-        location: "Fetid Pools",
-        eventDetails: [
-          {
-            eventType: "Item",
-            eventName: "Fetid Pools: Rusted Amulet",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Fetid Pools: Heart of Darkness",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Fetid Pools: Hero's Ring",
-          },
-        ],
-      };
-    case "queenstemple":
-      return {
-        location: "Iskal Sanctum",
-        eventDetails: [
-          {
-            eventType: "Ungodly Boss",
-            eventName: "Iskal Queen",
-          },
-        ],
-      };
-    case "wisp":
-      return {
-        location: "Circlet Hatchery",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "Circlet Hatchery: Soul Ember (Destroy All Hives)",
-          },
-        ],
-      };
-
-    // Yaesha
-    case "blinkthief":
-      return {
-        location: "The Verdant Strand",
-        eventDetails: [
-          {
-            eventType: "Mini Boss",
-            eventName: "Blink Thief",
-          },
-          {
-            eventType: "Item Drop",
-            eventName: "Ricochet Rifle",
-          },
-        ],
-      };
-    case "doeshrine":
-      return {
-        location: "Widow's Vestry",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "The Doe Shrine: Scavenger's Bauble",
-          },
-        ],
-      };
-    // TODO is this a miniboss?
-    case "guardianshrine":
-      return {
-        location: "Guardian Shrine",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "Guardian Shrine: Radiant Visage",
-          },
-          {
-            eventType: "Quest Reward",
-            eventName: "Guardian Shrine: Trait Book",
-          },
-        ],
-      };
-
-    // Reisum
-    // TODO Reisum dungeons
-
-    default:
-      throw new Error("Cannot Read Dungeon: " + event);
-  }
+async function getDungeonInfo() {
+  const response = await fetch("/Remnant-World-Analyzer/data/dungeons.json");
+  const dungeonInfo = await response.json();
+  return dungeonInfo;
 }
 
-function getMinibossInfo(event) {
-  switch (event.toLowerCase()) {
-    // Earth
-    case "brabus":
-      return {
-        location: "Cutthroat Channel",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Brabus",
-          },
-        ],
-      };
-    case "rootbrute":
-      return {
-        location: "Sunken Passage",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Gorefist",
-          },
-        ],
-      };
-    case "roottumbleweed":
-      return {
-        location: "The Tangled Pass",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "The Mangler",
-          },
-        ],
-      };
-    case "rootwraith":
-      return {
-        location: "The Hidden Sanctum",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Shroud",
-          },
-        ],
-      };
-    case "splitter":
-      return {
-        location: "Leto's Lab",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Riphide",
-          },
-          {
-            eventType: "Item Drop",
-            eventName: "Leto's Armor Set",
-          },
-        ],
-      };
-
-    // Rhom
-    case "houndmaster":
-      return {
-        location: "The Burrow",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Houndmaster and Maul",
-          },
-        ],
-      };
-    case "sentinel":
-      return {
-        location: "Shackled Canyon",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Raze",
-          },
-        ],
-      };
-    case "swarmmaster":
-      return {
-        location: "The Iron Rift",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Scourge",
-          },
-        ],
-      };
-    case "vyr":
-      return {
-        location: "The Ardent Temple",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Shade and Shatter",
-          },
-        ],
-      };
-
-    // Corsus
-    case "barbterror":
-      return {
-        location: "Needle Lair",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Barbed Terror",
-          },
-        ],
-      };
-    case "flickeringhorror":
-      return {
-        location: "Hall of Whispers",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Dream Eater",
-          },
-        ],
-      };
-    case "slimehulk":
-      return {
-        location: "The Drowned Trench",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Canker",
-          },
-        ],
-      };
-    case "tyrant":
-      return {
-        location: "The Capillary",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "The Thrall",
-          },
-        ],
-      };
-
-    // Yaesha
-    case "kincaller":
-      return {
-        location: "The Hall of Judgement",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "The Warden",
-          },
-        ],
-      };
-    case "blinkfiend":
-      return {
-        location: "Widow's Pass",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Onslaught",
-          },
-        ],
-      };
-    case "stormcaller":
-      return {
-        location: "Heretic's Nest",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Stormcaller",
-          },
-        ],
-      };
-    case "immolatorandzephyr":
-      return {
-        location: "Withering Village",
-        eventDetails: [
-          {
-            eventType: "Dungeon Boss",
-            eventName: "Sear and Scald",
-          },
-        ],
-      };
-
-    // Reisum
-    // TODO Reisum
-
-    default:
-      throw new Error("Cannot Read Miniboss: " + event);
-  }
+async function getMinibossInfo() {
+  const response = await fetch("/Remnant-World-Analyzer/data/minibosses.json");
+  const minibossInfo = await response.json();
+  return minibossInfo;
 }
 
-function getSiegeInfo(event) {
-  switch (event.toLowerCase()) {
-    // Rhom
-    case "thelostgantry":
-      return {
-        location: "Concourse of the Sun",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "The Lost Gantry: Beam Rifle",
-          },
-        ],
-      };
-
-    // Yaesha
-    case "therisen":
-      return {
-        location: "Ahanae's Lament",
-        eventDetails: [
-          { eventType: "Quest Reward", eventName: "The Risen: Soul Anchor" },
-        ],
-      };
-    case "wolfshrine":
-      return {
-        location: "Matyr's Sanctuary",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "The Ravager Shrine: Elder Armor Set",
-          },
-        ],
-      };
-    default:
-      throw new Error("Cannot Read Siege: " + event);
-  }
+async function getSiegeInfo() {
+  const response = await fetch("/Remnant-World-Analyzer/data/sieges.json");
+  const siegeInfo = await response.json();
+  return siegeInfo;
 }
 
 // TODO Switch/Dict for Points of Interest
