@@ -21,19 +21,6 @@
       }
     ]
   },
-  "LizAndLiz": {
-    "zone": "The Warren",
-    "eventDetails": [
-      {
-        "eventType": "Quest Item",
-        "eventName": "A Tale of Two Liz's: Liz's Key (Defend Both Liz's)"
-      },
-      {
-        "eventType": "Quest Reward",
-        "eventName": "A Tale of Two Liz's: Chicago Typewriter"
-      }
-    ]
-  },
   "MadMerchant": {
     "zone": "Junktown",
     "eventDetails": [
@@ -56,15 +43,6 @@
       }
     ]
   },
-  "RootShrine": {
-    "zone": "The Gallows",
-    "eventDetails": [
-      {
-        "eventType": "Quest Reward",
-        "eventName": "The Root Shrine: Twisted Armor Set (Craft at Shrine)"
-      }
-    ]
-  },
   "ArmorVault": {
     "zone": "Vault of the Heralds",
     "eventDetails": [
@@ -84,19 +62,6 @@
       {
         "eventType": "Quest Reward",
         "eventName": "The Clean Room: Wastelander Flail"
-      }
-    ]
-  },
-  "BrainBug": {
-    "zone": "Strange Pass",
-    "eventDetails": [
-      {
-        "eventType": "Mini Boss/NPC",
-        "eventName": "Mar'Gosh"
-      },
-      {
-        "eventType": "Quest Reward",
-        "eventName": "Brain Bug: Gift of the Iskal"
       }
     ]
   },
