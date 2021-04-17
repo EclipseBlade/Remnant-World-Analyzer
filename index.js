@@ -17,7 +17,7 @@ function submitForm(event) {
 
   const reader = new FileReader();
   reader.readAsText(file);
-  reader.onload = function () {
+  reader.onload = () => {
     try {
       if ($("#modeSelect").val() === "1") {
         // analyzeCampaign(reader.result);
@@ -32,7 +32,7 @@ function submitForm(event) {
     }
   };
 
-  reader.onerror = function () {
+  reader.onerror = () => {
     console.log(reader.error);
     $("#formFile").addClass("is-invalid");
   };
@@ -132,7 +132,8 @@ function analyzeAdventure(fileText) {
     for (const details of worldEvent.eventDetails) {
       $("#worldInfo").append(
         `<tr>
-        <td>${zone}: ${worldEvent.location}</td>
+        <td>${zone}</td>
+        <td>${worldEvent.location}</td>
         <td>${details.eventType}</td>
         <td>${details.eventName}</td>
         </tr>`
@@ -333,16 +334,6 @@ function getDungeonInfo(event) {
           },
         ],
       };
-    case "thelostgantry":
-      return {
-        location: "Concourse of the Sun",
-        eventDetails: [
-          {
-            eventType: "Quest Reward",
-            eventName: "The Lost Gantry: Beam Rifle",
-          },
-        ],
-      };
 
     // Corsus
     case "brainbug":
@@ -438,8 +429,10 @@ function getDungeonInfo(event) {
           },
         ],
       };
+
     // Reisum
     // TODO Reisum dungeons
+
     default:
       throw new Error("Cannot Read Dungeon: " + event);
   }
@@ -631,6 +624,7 @@ function getMinibossInfo(event) {
 
     // Reisum
     // TODO Reisum
+
     default:
       throw new Error("Cannot Read Miniboss: " + event);
   }
@@ -638,6 +632,19 @@ function getMinibossInfo(event) {
 
 function getSiegeInfo(event) {
   switch (event.toLowerCase()) {
+    // Rhom
+    case "thelostgantry":
+      return {
+        location: "Concourse of the Sun",
+        eventDetails: [
+          {
+            eventType: "Quest Reward",
+            eventName: "The Lost Gantry: Beam Rifle",
+          },
+        ],
+      };
+
+    // Yaesha
     case "therisen":
       return {
         location: "Ahanae's Lament",

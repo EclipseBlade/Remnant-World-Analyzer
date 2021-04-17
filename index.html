@@ -27,8 +27,8 @@
         rolled.
       </p>
 
-      <div class="mb-3 issues">
-        <p>Known Issues:</p>
+      <div class="mb-3">
+        <p class="issues-desc">Known Issues:</p>
         <ul class="list-style">
           <li>Campaign does not work</li>
           <li>Reisum does not work</li>
@@ -58,7 +58,7 @@
         <div class="mb-3">
           <label for="formFile" class="form-label">Upload Save File Here</label>
           <input class="form-control w-50" type="file" id="formFile" required />
-          <div class="invalid-feedback">Please upload a valid file.</div>
+          <div class="invalid-feedback">Error reading file.</div>
         </div>
 
         <button class="btn btn-primary mb-3 mt-2" type="submit">
@@ -70,6 +70,7 @@
         <thead>
           <tr>
             <th scope="col">Location</th>
+            <th scope="col">Zone</th>
             <th scope="col">Event Type</th>
             <th scope="col">Event Name</th>
             <th scope="col"></th>

@@ -1,0 +1,159 @@
+{
+  "Brabus": {
+    "zone": "Cutthroat Channel",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Brabus"
+      }
+    ]
+  },
+  "RootBrute": {
+    "zone": "Sunken Passage",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Gorefist"
+      }
+    ]
+  },
+  "RootTumbleweed": {
+    "zone": "The Tangled Pass",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "The Mangler"
+      }
+    ]
+  },
+  "RootWraith": {
+    "zone": "The Hidden Sanctum",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Shroud"
+      }
+    ]
+  },
+  "Splitter": {
+    "zone": "Leto's Lab",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Riphide"
+      },
+      {
+        "eventType": "Item Drop",
+        "eventName": "Leto's Armor Set"
+      }
+    ]
+  },
+  "HoundMaster": {
+    "zone": "The Burrow",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Houndmaster and Maul"
+      }
+    ]
+  },
+  "Sentinel": {
+    "zone": "Shackled Canyon",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Raze"
+      }
+    ]
+  },
+  "SwarmMaster": {
+    "zone": "The Iron Rift",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Scourge"
+      }
+    ]
+  },
+  "Vyr": {
+    "zone": "The Ardent Temple",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Shade and Shatter"
+      }
+    ]
+  },
+  "BarbTerror": {
+    "zone": "Needle Lair",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Barbed Terror"
+      }
+    ]
+  },
+  "FlickeringHorror": {
+    "zone": "Hall of Whispers",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Dream Eater"
+      }
+    ]
+  },
+  "SlimeHulk": {
+    "zone": "The Drowned Trench",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Canker"
+      }
+    ]
+  },
+  "Tyrant": {
+    "zone": "The Capillary",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "The Thrall"
+      }
+    ]
+  },
+  "KinCaller": {
+    "zone": "The Hall of Judgement",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "The Warden"
+      }
+    ]
+  },
+  "BlinkFiend": {
+    "zone": "Widow's Pass",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Onslaught"
+      }
+    ]
+  },
+  "StormCaller": {
+    "zone": "Heretic's Nest",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Stormcaller"
+      }
+    ]
+  },
+  "ImmolatorAndZephyr": {
+    "zone": "Withering Village",
+    "eventDetails": [
+      {
+        "eventType": "Dungeon Boss",
+        "eventName": "Sear and Scald"
+      }
+    ]
+  }
+}
