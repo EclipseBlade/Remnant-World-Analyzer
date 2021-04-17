@@ -1,0 +1,26 @@
+{
+  "TheLostGantry": {
+    "zone": "Concourse of the Sun",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "The Lost Gantry: Beam Rifle"
+      }
+    ]
+  },
+  "TheRisen": {
+    "zone": "Ahanae's Lament",
+    "eventDetails": [
+      { "eventType": "Quest Reward", "eventName": "The Risen: Soul Anchor" }
+    ]
+  },
+  "WolfShrine": {
+    "zone": "Matyr's Sanctuary",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "The Ravager Shrine: Elder Armor Set"
+      }
+    ]
+  }
+}

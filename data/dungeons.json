@@ -1,0 +1,173 @@
+{
+  "HuntersHideout": {
+    "zone": "Hidden Grotto",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Hunter's Hideout: Hunting Pistol"
+      }
+    ]
+  },
+  "LastWill": {
+    "zone": "Sorrow's Field",
+    "eventDetails": [
+      {
+        "eventType": "Quest Item",
+        "eventName": "Supply Run: Monkey Key"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Supply Run: Assault Rifle"
+      }
+    ]
+  },
+  "LizAndLiz": {
+    "zone": "The Warren",
+    "eventDetails": [
+      {
+        "eventType": "Quest Item",
+        "eventName": "A Tale of Two Liz's: Liz's Key (Defend Both Liz's)"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "A Tale of Two Liz's: Chicago Typewriter"
+      }
+    ]
+  },
+  "MadMerchant": {
+    "zone": "Junktown",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Showdown at Junk Town: Twisted Mask"
+      }
+    ]
+  },
+  "RootCultist": {
+    "zone": "Marrow Pass",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Cult of the Root: Root Circlet"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Cult of the Root: Braided Thorns"
+      }
+    ]
+  },
+  "RootShrine": {
+    "zone": "The Gallows",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "The Root Shrine: Twisted Armor Set (Craft at Shrine)"
+      }
+    ]
+  },
+  "ArmorVault": {
+    "zone": "Vault of the Heralds",
+    "eventDetails": [
+      {
+        "eventType": "Quest Item",
+        "eventName": "Armor Vault: Glowing Rod"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Armor Vault: Akari Armor Set"
+      }
+    ]
+  },
+  "TheCleanRoom": {
+    "zone": "The Purge Hall",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "The Clean Room: Wastelander Flail"
+      }
+    ]
+  },
+  "BrainBug": {
+    "zone": "Strange Pass",
+    "eventDetails": [
+      {
+        "eventType": "Mini Boss/NPC",
+        "eventName": "Mar'Gosh"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Brain Bug: Gift of the Iskal"
+      }
+    ]
+  },
+  "FetidPool": {
+    "zone": "Fetid Pools",
+    "eventDetails": [
+      {
+        "eventType": "Item",
+        "eventName": "Fetid Pools: Rusted Amulet"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Fetid Pools: Heart of Darkness"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Fetid Pools: Hero's Ring"
+      }
+    ]
+  },
+  "QueensTemple": {
+    "zone": "Iskal Sanctum",
+    "eventDetails": [
+      {
+        "eventType": "Ungodly Boss",
+        "eventName": "Iskal Queen"
+      }
+    ]
+  },
+  "Wisp": {
+    "zone": "Circlet Hatchery",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Circlet Hatchery: Soul Ember (Destroy All Hives)"
+      }
+    ]
+  },
+  "BlinkThief": {
+    "zone": "The Verdant Strand",
+    "eventDetails": [
+      {
+        "eventType": "Mini Boss",
+        "eventName": "Blink Thief"
+      },
+      {
+        "eventType": "Item Drop",
+        "eventName": "Ricochet Rifle"
+      }
+    ]
+  },
+  "DoeShrine": {
+    "zone": "Widow's Vestry",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "The Doe Shrine: Scavenger's Bauble"
+      }
+    ]
+  },
+  "GuardianShrine": {
+    "zone": "Guardian Shrine",
+    "eventDetails": [
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Guardian Shrine: Radiant Visage"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Guardian Shrine: Trait Book"
+      }
+    ]
+  }
+}
