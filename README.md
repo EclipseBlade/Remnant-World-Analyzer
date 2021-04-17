@@ -9,3 +9,5 @@ https://github.com/hzla/Remnant-World-Analyzer
 
 Razzmatazzz's save manager:  
 https://github.com/Razzmatazzz/RemnantSaveManager
+
+Note that this project is not finished and does not support Reisum or Campaign yet, but will in the future.
