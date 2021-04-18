@@ -46,7 +46,10 @@
   "TheRisen": {
     "zone": "Ahanae's Lament",
     "eventDetails": [
-      { "eventType": "Quest Reward", "eventName": "The Risen: Soul Anchor" }
+      {
+        "eventType": "Quest Reward",
+        "eventName": "The Risen: Soul Anchor"
+      }
     ]
   },
   "WolfShrine": {

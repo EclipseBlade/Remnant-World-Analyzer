@@ -1,37 +1,75 @@
 {
   "RootDragon": {
     "zone": "The Ash Yard",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "Singe" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "Singe"
+      }
+    ]
   },
   "RootEnt": {
     "zone": "The Choking Hollow",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "The Ent" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "The Ent"
+      }
+    ]
   },
   "TheHarrow": {
     "zone": "The Bunker",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "The Harrow" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "The Harrow"
+      }
+    ]
   },
   "WastelandGuardian": {
     "zone": "Loom of the Black Sun",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "Claviger" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "Claviger"
+      }
+    ]
   },
   "Fatty": {
     "zone": "The Shack",
     "eventDetails": [
-      { "eventType": "World Boss", "eventName": "The Unclean One" }
+      {
+        "eventType": "World Boss",
+        "eventName": "The Unclean One"
+      }
     ]
   },
   "SwampGuardian": {
     "zone": "The Grotto",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "Ixillis" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "Ixillis"
+      }
+    ]
   },
   "TotemFather": {
     "zone": "The Scalding Glade",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "Totem Father" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "Totem Father"
+      }
+    ]
   },
   "Wolf": {
     "zone": "Ravager's Haunt",
-    "eventDetails": [{ "eventType": "World Boss", "eventName": "The Ravager" }]
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "The Ravager"
+      }
+    ]
   },
   "RatRider": {
     "zone": "Crimson Hold",
