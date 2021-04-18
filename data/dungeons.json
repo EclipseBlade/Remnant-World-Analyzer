@@ -110,6 +110,10 @@
       {
         "eventType": "Item Drop",
         "eventName": "Ricochet Rifle"
+      },
+      {
+        "eventType": "Item Drop",
+        "eventName": "Celerity Stone"
       }
     ]
   },

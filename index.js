@@ -1,3 +1,8 @@
+let bossInfo = null;
+let dungeonInfo = null;
+let minibossInfo = null;
+let siegeInfo = null;
+
 async function submitForm(event) {
   event.preventDefault();
   const file = $("#formFile")[0].files[0];
@@ -29,7 +34,7 @@ async function submitForm(event) {
 }
 
 // TODO complete campain analysis
-// function analyzeCampaign(fileText) {}
+function analyzeCampaign(fileText) {}
 
 async function analyzeAdventure(fileText) {
   // Adventure mode save file items and events can be read after the last mention of "Adventure"
@@ -74,7 +79,7 @@ async function analyzeAdventure(fileText) {
         const itemEvent = {};
         // In the case of a sketterling temple, it is possible to identify the color by checking if the save file contains armored bugs or not
         // At the moment, it does not seem possible to identify the drop of the red beetle
-        if (eventInfo[1].toLowerCase() === "sketterling") {
+        if (eventInfo[1].toLowerCase() === "Sketterling") {
           itemEvent.eventType = "Sketterling Temple";
           itemEvent.eventName = fileText.includes("Bug_Armored")
             ? (itemEvent.eventName = "Black Vikorian Beetle")
@@ -189,42 +194,59 @@ function getWorld(location) {
 }
 
 // These just read the data for each category from the json files in the data folder
+// Now stored in gobal variables to make sure we only request the data once for each type
 
 // TODO item json dictionary
 // function getItemInfo(event) {}
 
 async function getBossInfo() {
-  const response = await fetch("/Remnant-World-Analyzer/data/bosses.json");
-  if (!response.ok) {
-    throw new Error("Could Not Read Bosses");
+  if (bossInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/bosses.json"
+    );
+    if (!response.ok) {
+      throw new Error("Could Not Read Bosses");
+    }
+    bossInfo = await response.json();
   }
-  const bossInfo = await response.json();
   return bossInfo;
 }
 
 async function getDungeonInfo() {
-  const response = await fetch("/Remnant-World-Analyzer/data/dungeons.json");
-  if (!response.ok) {
-    throw new Error("Could Not Read Dungeons");
+  if (dungeonInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/dungeons.json"
+    );
+    if (!response.ok) {
+      throw new Error("Could Not Read Dungeons");
+    }
+    dungeonInfo = await response.json();
   }
-  const dungeonInfo = await response.json();
   return dungeonInfo;
 }
 
 async function getMinibossInfo() {
-  const response = await fetch("/Remnant-World-Analyzer/data/minibosses.json");
-  if (!response.ok) {
-    throw new Error("Could Not Read Minibosses");
+  if (minibossInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/minibosses.json"
+    );
+    if (!response.ok) {
+      throw new Error("Could Not Read Minibosses");
+    }
+    minibossInfo = await response.json();
   }
-  const minibossInfo = await response.json();
   return minibossInfo;
 }
 
 async function getSiegeInfo() {
-  const response = await fetch("/Remnant-World-Analyzer/data/sieges.json");
-  const siegeInfo = await response.json();
-  if (!response.ok) {
-    throw new Error("Could Not Read Sieges");
+  if (siegeInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/sieges.json"
+    );
+    if (!response.ok) {
+      throw new Error("Could Not Read Sieges");
+    }
+    siegeInfo = await response.json();
   }
   return siegeInfo;
 }
