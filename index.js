@@ -1,7 +1,8 @@
-let bossInfo = null;
-let dungeonInfo = null;
-let minibossInfo = null;
-let siegeInfo = null;
+let items = null;
+let bosses = null;
+let dungeons = null;
+let minibosses = null;
+let sieges = null;
 
 async function submitForm(event) {
   event.preventDefault();
@@ -21,7 +22,7 @@ async function submitForm(event) {
         await analyzeAdventure(reader.result);
       }
     } catch (error) {
-      // To Do Custom Errors and Parsing
+      // TODO Custom Errors and Parsing
       console.log(error);
       $("#formFile").addClass("is-invalid");
     }
@@ -62,6 +63,7 @@ async function analyzeAdventure(fileText) {
   const world = getWorld(advText[0].split(/_/)[1]);
   const worldEvents = [];
   // All the event information is stored in jsons
+  const itemInfo = await getItemInfo();
   const bossInfo = await getBossInfo();
   const dungeonInfo = await getDungeonInfo();
   const minibossInfo = await getMinibossInfo();
@@ -74,25 +76,20 @@ async function analyzeAdventure(fileText) {
 
     // The event text must be switched to lowercase because sometimes the save file uses MiniBoss and other times it uses Miniboss
     switch (eventInfo[0].toLowerCase()) {
-      // An event in this case is usual an item, but there are a few outliers like the sketterling temple
+      // An event is usual an item, but there are a few outliers like the sketterling temple
       case "event":
-        const itemEvent = {};
         // In the case of a sketterling temple, it is possible to identify the color by checking if the save file contains armored bugs or not
         // At the moment, it does not seem possible to identify the drop of the red beetle
-        if (eventInfo[1].toLowerCase() === "Sketterling") {
-          itemEvent.eventType = "Sketterling Temple";
-          itemEvent.eventName = fileText.includes("Bug_Armored")
-            ? (itemEvent.eventName = "Black Vikorian Beetle")
-            : (itemEvent.eventName = "Red Vikorian Beetle");
-        } else {
-          // This is a normal item
-          // This is not finished it will be more descriptive later on
-          itemEvent.eventType = "Item Drop";
-          itemEvent.eventName = eventInfo[1].replace(/([A-Z])/g, " $1").trim();
+        if (eventInfo[1] === "Sketterling") {
+          eventInfo[1] += fileText.includes("Bug_Armored") ? "Black" : "Red";
         }
-        worldEvents[worldEvents.length - 1].eventDetails.push(itemEvent);
+        if (!(eventInfo[1] in itemInfo)) {
+          throw new Error("Invalid Item: " + eventInfo[1]);
+        }
+        worldEvents[worldEvents.length - 1].eventDetails.push(
+          itemInfo[eventInfo[1]]
+        );
         break;
-
       // A boss is the world boss like Singe, Claviger, Ixiillis, or The Ravager
       case "boss":
         if (!(eventInfo[1] in bossInfo)) {
@@ -100,7 +97,6 @@ async function analyzeAdventure(fileText) {
         }
         worldEvents.push(bossInfo[eventInfo[1]]);
         break;
-
       // A smalld is a side dungeon with no boss or siege at the end like Leto's Lab, The Clean Room, Circlet Hatchery, or Widow's Vestry
       case "smalld":
         if (!(eventInfo[1] in dungeonInfo)) {
@@ -108,7 +104,6 @@ async function analyzeAdventure(fileText) {
         }
         worldEvents.push(dungeonInfo[eventInfo[1]]);
         break;
-
       // A miniboss is a side dungeon with a fogged wall containing a boss like Gorefist, Raze, Canker, or The Warden
       case "miniboss":
         if (!(eventInfo[1] in minibossInfo)) {
@@ -116,7 +111,6 @@ async function analyzeAdventure(fileText) {
         }
         worldEvents.push(minibossInfo[eventInfo[1]]);
         break;
-
       // A siege is a side dungeon with a fogged wall containing no boss like A Tale of Two Liz's, The Lost Gantry, or the Matyr's Sanctuary
       // Interestingly enough, Mar'Gosh's Lair is considered a siege because he is sometimes a boss and sometimes an npc
       case "siege":
@@ -125,7 +119,6 @@ async function analyzeAdventure(fileText) {
         }
         worldEvents.push(siegeInfo[eventInfo[1]]);
         break;
-
       // A overworldpoi is a point of interest like Mud Tooth, the Monolith, the Abandoned Throne, the Flautist, and the Cryptolith
       // A point of interest is sometimes refered to as a world event
       case "overworldpoi":
@@ -140,7 +133,6 @@ async function analyzeAdventure(fileText) {
           ],
         });
         break;
-
       // The cryptolith is a unique point of interest because it spawns the labyrinth that players can traverse to get the labyrinth armor set
       // This indicates that the labyrinth was spawned
       // However, I just use it to add the Soul Link ring if the cryptolith spawned on Rhom
@@ -182,10 +174,10 @@ function getWorld(location) {
       return "Earth";
     case "wasteland":
       return "Rhom";
-    case "jungle":
-      return "Yaesha";
     case "swamp":
       return "Corsus";
+    case "jungle":
+      return "Yaesha";
     case "snow":
       return "Reisum";
     default:
@@ -194,61 +186,72 @@ function getWorld(location) {
 }
 
 // These just read the data for each category from the json files in the data folder
-// Now stored in gobal variables to make sure we only request the data once for each type
+// Now stored in global variables to make sure we only request the data once for each type
 
 // TODO item json dictionary
-// function getItemInfo(event) {}
+async function getItemInfo() {
+  if (items === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/items.json"
+    );
+    if (!response.ok) {
+      throw new Error("Could Not Read Items");
+    }
+    items = await response.json();
+  }
+  return items;
+}
 
 async function getBossInfo() {
-  if (bossInfo === null) {
+  if (bosses === null) {
     const response = await fetch(
       "https://eclipseblade.github.io/Remnant-World-Analyzer/data/bosses.json"
     );
     if (!response.ok) {
       throw new Error("Could Not Read Bosses");
     }
-    bossInfo = await response.json();
+    bosses = await response.json();
   }
-  return bossInfo;
+  return bosses;
 }
 
 async function getDungeonInfo() {
-  if (dungeonInfo === null) {
+  if (dungeons === null) {
     const response = await fetch(
       "https://eclipseblade.github.io/Remnant-World-Analyzer/data/dungeons.json"
     );
     if (!response.ok) {
       throw new Error("Could Not Read Dungeons");
     }
-    dungeonInfo = await response.json();
+    dungeons = await response.json();
   }
-  return dungeonInfo;
+  return dungeons;
 }
 
 async function getMinibossInfo() {
-  if (minibossInfo === null) {
+  if (minibosses === null) {
     const response = await fetch(
       "https://eclipseblade.github.io/Remnant-World-Analyzer/data/minibosses.json"
     );
     if (!response.ok) {
       throw new Error("Could Not Read Minibosses");
     }
-    minibossInfo = await response.json();
+    minibosses = await response.json();
   }
-  return minibossInfo;
+  return minibosses;
 }
 
 async function getSiegeInfo() {
-  if (siegeInfo === null) {
+  if (sieges === null) {
     const response = await fetch(
       "https://eclipseblade.github.io/Remnant-World-Analyzer/data/sieges.json"
     );
     if (!response.ok) {
       throw new Error("Could Not Read Sieges");
     }
-    siegeInfo = await response.json();
+    sieges = await response.json();
   }
-  return siegeInfo;
+  return sieges;
 }
 
 // TODO Points of Interest json dictionary
