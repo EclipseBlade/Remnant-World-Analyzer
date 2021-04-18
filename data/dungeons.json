@@ -69,7 +69,7 @@
     "zone": "Fetid Pools",
     "eventDetails": [
       {
-        "eventType": "Item",
+        "eventType": "Item Drop",
         "eventName": "Fetid Pools: Rusted Amulet"
       },
       {

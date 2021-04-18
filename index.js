@@ -23,13 +23,13 @@ async function submitForm(event) {
       }
     } catch (error) {
       // TODO Custom Errors and Parsing
-      console.log(error);
+      console.error(error);
       $("#formFile").addClass("is-invalid");
     }
   };
 
   reader.onerror = () => {
-    console.log(reader.error);
+    console.error(reader.error);
     $("#formFile").addClass("is-invalid");
   };
 }
@@ -80,6 +80,7 @@ async function analyzeAdventure(fileText) {
       case "event":
         // In the case of a sketterling temple, it is possible to identify the color by checking if the save file contains armored bugs or not
         // At the moment, it does not seem possible to identify the drop of the red beetle
+        // Might break with multiple sketters
         if (eventInfo[1] === "Sketterling") {
           eventInfo[1] += fileText.includes("Bug_Armored") ? "Black" : "Red";
         }
@@ -95,21 +96,21 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in bossInfo)) {
           throw new Error("Invalid Boss: " + eventInfo[1]);
         }
-        worldEvents.push(bossInfo[eventInfo[1]]);
+        worldEvents.push(deepCopy(bossInfo[eventInfo[1]]));
         break;
       // A smalld is a side dungeon with no boss or siege at the end like Leto's Lab, The Clean Room, Circlet Hatchery, or Widow's Vestry
       case "smalld":
         if (!(eventInfo[1] in dungeonInfo)) {
           throw new Error("Invalid Dungeon: " + eventInfo[1]);
         }
-        worldEvents.push(dungeonInfo[eventInfo[1]]);
+        worldEvents.push(deepCopy(dungeonInfo[eventInfo[1]]));
         break;
       // A miniboss is a side dungeon with a fogged wall containing a boss like Gorefist, Raze, Canker, or The Warden
       case "miniboss":
         if (!(eventInfo[1] in minibossInfo)) {
           throw new Error("Invalid Miniboss: " + eventInfo[1]);
         }
-        worldEvents.push(minibossInfo[eventInfo[1]]);
+        worldEvents.push(deepCopy(minibossInfo[eventInfo[1]]));
         break;
       // A siege is a side dungeon with a fogged wall containing no boss like A Tale of Two Liz's, The Lost Gantry, or the Matyr's Sanctuary
       // Interestingly enough, Mar'Gosh's Lair is considered a siege because he is sometimes a boss and sometimes an npc
@@ -117,7 +118,7 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in siegeInfo)) {
           throw new Error("Invalid Siege: " + eventInfo[1]);
         }
-        worldEvents.push(siegeInfo[eventInfo[1]]);
+        worldEvents.push(deepCopy(siegeInfo[eventInfo[1]]));
         break;
       // A overworldpoi is a point of interest like Mud Tooth, the Monolith, the Abandoned Throne, the Flautist, and the Cryptolith
       // A point of interest is sometimes refered to as a world event
@@ -183,6 +184,10 @@ function getWorld(location) {
     default:
       throw new Error("Invalid Location: " + location);
   }
+}
+
+function deepCopy(worldEvent) {
+  return { zone: worldEvent.zone, eventDetails: [...worldEvent.eventDetails] };
 }
 
 // These just read the data for each category from the json files in the data folder
