@@ -19,8 +19,7 @@ class ConnectionError extends Error {
     this.name = "ConnectionError";
   }
 }
-
-async function submitForm(event) {
+$("#worldInput").submit(async (event) => {
   event.preventDefault();
   $("#loading").show();
 
@@ -76,7 +75,7 @@ async function submitForm(event) {
     console.log(reader.error);
     $("#loading").hide();
   };
-}
+});
 
 // TODO complete campain analysis
 function analyzeCampaign(fileText) {}
