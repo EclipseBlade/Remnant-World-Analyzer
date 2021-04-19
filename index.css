@@ -29,6 +29,21 @@ td {
   margin: 0;
 }
 
+.center {
+  margin: 0 auto;
+}
+
+#loading {
+  display: none;
+}
+
+#connectionError {
+  display: none;
+  font-size: 25px;
+  text-align: center;
+  color: #dc3545;
+}
+
 #worldDescriptor {
   display: none;
 }

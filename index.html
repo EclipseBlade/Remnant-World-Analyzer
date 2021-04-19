@@ -27,7 +27,7 @@
         rolled.
       </p>
 
-      <div class="mb-3">
+      <div class="mb-4">
         <p class="issues-desc">Known Issues:</p>
         <ul class="list-style">
           <li>Campaign does not work</li>
@@ -39,12 +39,12 @@
         </ul>
       </div>
 
-      <form onsubmit="return submitForm(event)">
+      <form class="mt-2 mb-4 center w-50" onsubmit="return submitForm(event)">
         <div class="mb-3">
           <label for="modeSelect" class="form-label">Choose Game Mode</label>
           <select
             id="modeSelect"
-            class="form-select w-50"
+            class="form-select"
             aria-label="Default select example"
             required
           >
@@ -56,15 +56,19 @@
         </div>
 
         <div class="mb-3">
-          <label for="formFile" class="form-label">Upload Save File Here</label>
-          <input class="form-control w-50" type="file" id="formFile" required />
+          <label for="formFile" class="form-label">Upload Save File</label>
+          <input class="form-control" type="file" id="formFile" required />
           <div class="invalid-feedback">Error reading file.</div>
         </div>
 
-        <button class="btn btn-primary mb-3 mt-2" type="submit">
-          Explore!
-        </button>
+        <button class="btn btn-primary mt-2" type="submit">Explore!</button>
       </form>
+
+      <div id="loading" class="text-center">
+        <div class="spinner-border text-light" role="status"></div>
+      </div>
+
+      <p id="connectionError">Error: Could Not Connect to Data Files</p>
 
       <table id="worldDescriptor" class="table">
         <thead>
