@@ -1,16 +1,13 @@
 // After adventure mode is complete the website will display minified versions of the html, css, javascript, and jsons
 // TODO Reisum
-// TODO review areas for extra items
+// TODO review areas for extra items (Root Nexus)
+// Review Item Events (Root Nexus)
+
 let itemInfo = null;
 let bossInfo = null;
 let dungeonInfo = null;
 let minibossInfo = null;
 let siegeInfo = null;
-
-// Makes deep copy of event to avoid editing dictionary
-function deepCopy(worldEvent) {
-  return { zone: worldEvent.zone, eventDetails: [...worldEvent.eventDetails] };
-}
 
 // seperates standard errors and connection to display different messages on html
 class ConnectionError extends Error {
@@ -19,63 +16,95 @@ class ConnectionError extends Error {
     this.name = "ConnectionError";
   }
 }
-$("#worldInput").submit(async (event) => {
-  event.preventDefault();
-  $("#loading").show();
 
-  const file = $("#formFile")[0].files[0];
-  const reader = new FileReader();
-  reader.readAsText(file);
-  reader.onload = async () => {
-    try {
-      let worldAnalysis = null;
-      // Currently the user has to select whether they want to analyze campaign or adventure, but the program should be able to tell
-      // The option will probably be removed in the future though it does make the program more efficient to leave it
-      if ($("#modeSelect").val() === "1") {
-        // analyzeCampaign(reader.result);
-        $("#modeSelect").addClass("is-invalid");
-      } else {
-        $("#modeSelect").removeClass("is-invalid");
-        worldAnalysis = await analyzeAdventure(reader.result);
-      }
-
-      // This is what displays the processed events/items
-      // It would be faster to do display the content in the analyzeMode's switch statement but it would also be harder to read and debug
-      if (worldAnalysis) {
-        $("#worldInfo").empty();
-        for (const worldEvent of worldAnalysis.worldEvents) {
-          for (const details of worldEvent.eventDetails) {
-            $("#worldInfo").append(
-              `<tr>
-        <td>${worldAnalysis.world}</td>
-        <td>${worldEvent.zone}</td>
-        <td>${details.eventType}</td>
-        <td>${details.eventName}</td>
-        </tr>`
-            );
-          }
-        }
-        $("#connectionError").hide();
-        $("#formFile").removeClass("is-invalid");
-        $("#worldDescriptor").show();
-      }
-    } catch (error) {
-      if (!(error instanceof ConnectionError)) {
-        $("#formFile").addClass("is-invalid");
-      } else {
-        $("#connectionError").show();
-      }
-      console.log(error);
+// These just read the data for each category from the json files in the data folder
+// Now stored in global variables to make sure we only request the data once for each type
+async function initItemInfo() {
+  if (itemInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/items.json"
+    );
+    if (!response.ok) {
+      throw new ConnectionError("Could Not Read Items");
     }
-    $("#loading").hide();
-  };
+    itemInfo = await response.json();
+  }
+  return itemInfo;
+}
 
-  reader.onerror = () => {
-    $("#formFile").addClass("is-invalid");
-    console.log(reader.error);
-    $("#loading").hide();
-  };
-});
+async function initBossInfo() {
+  if (bossInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/bosses.json"
+    );
+    if (!response.ok) {
+      throw new ConnectionError("Could Not Read Bosses");
+    }
+    bossInfo = await response.json();
+  }
+}
+
+async function initDungeonInfo() {
+  if (dungeonInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/dungeons.json"
+    );
+    if (!response.ok) {
+      throw new ConnectionError("Could Not Read Dungeons");
+    }
+    dungeonInfo = await response.json();
+  }
+}
+
+async function initMinibossInfo() {
+  if (minibossInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/minibosses.json"
+    );
+    if (!response.ok) {
+      throw new ConnectionError("Could Not Read Minibosses");
+    }
+    minibossInfo = await response.json();
+  }
+}
+
+async function initSiegeInfo() {
+  if (siegeInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/sieges.json"
+    );
+    if (!response.ok) {
+      throw new ConnectionError("Could Not Read Sieges");
+    }
+    siegeInfo = await response.json();
+  }
+}
+
+// TODO Points of Interest json dictionary
+// function initPointOfInterestInfo() {
+// }
+
+// Makes deep copy of event to avoid editing dictionary
+function deepCopy({ zone, eventDetails }) {
+  return { zone, eventDetails: [...eventDetails] };
+}
+
+function getWorld(location) {
+  switch (location.toLowerCase()) {
+    case "city":
+      return "Earth";
+    case "wasteland":
+      return "Rhom";
+    case "swamp":
+      return "Corsus";
+    case "jungle":
+      return "Yaesha";
+    case "snow":
+      return "Reisum";
+    default:
+      throw new Error("Invalid Location: " + location);
+  }
+}
 
 // TODO complete campain analysis
 function analyzeCampaign(fileText) {}
@@ -120,8 +149,8 @@ async function analyzeAdventure(fileText) {
   await initMinibossInfo();
   await initSiegeInfo();
 
-  // Now time to analyze what's going in this world
-  const worldEvents = advText.reduce((eventAccumulator, eventText) => {
+  // Reads a single event from advText, paired with reduce function
+  const readEventReducer = (eventAccumulator, eventText) => {
     const eventInfo = eventText.split(/\/Quest_/)[1].split(/_/);
     // console.log(eventInfo);
 
@@ -207,7 +236,7 @@ async function analyzeAdventure(fileText) {
       case "cryptolith":
         if (world === "Rhom") {
           eventAccumulator[eventAccumulator.length - 1].eventDetails.push({
-            eventType: "Item Drop",
+            eventType: "Item Drop: Ring",
             eventName: "Soul Link",
           });
         }
@@ -216,94 +245,91 @@ async function analyzeAdventure(fileText) {
         throw new Error("Invalid Event: " + eventInfo[0]);
     }
     return eventAccumulator;
-  }, []);
+  };
+
+  // Move randomly spawned trait books and simulacrum to bottom of each worldEvent
+  const compareEvents = (a, b) => {
+    if (a.eventType === "Item Drop") {
+      if (b.eventType === "Item Drop") {
+        if (a.eventName > b.eventName) {
+          return 1;
+        }
+        if (a.eventName < b.eventName) {
+          return -1;
+        }
+        return 0;
+      }
+      return 1;
+    }
+    return 0;
+  };
+
+  const worldEvents = advText
+    .reduce(readEventReducer, [])
+    .map(({ zone, eventDetails }) => ({
+      zone,
+      eventDetails: eventDetails.sort(compareEvents),
+    }));
 
   return { world, worldEvents };
 }
 
-function getWorld(location) {
-  switch (location.toLowerCase()) {
-    case "city":
-      return "Earth";
-    case "wasteland":
-      return "Rhom";
-    case "swamp":
-      return "Corsus";
-    case "jungle":
-      return "Yaesha";
-    case "snow":
-      return "Reisum";
-    default:
-      throw new Error("Invalid Location: " + location);
-  }
-}
-
-// These just read the data for each category from the json files in the data folder
-// Now stored in global variables to make sure we only request the data once for each type
-async function initItemInfo() {
-  if (itemInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/items.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Items");
+// This is what displays the processed events/items
+// It would be faster to do display the content in the analyzeMode's switch statement but it would also be harder to read and debug
+function renderTable({ world, worldEvents }) {
+  $("#world-info").empty();
+  for (const { zone, eventDetails } of worldEvents) {
+    for (const { eventType, eventName } of eventDetails) {
+      $("#world-info").append(
+        `<tr><td>${world}</td><td>${zone}</td><td>${eventType}</td><td>${eventName}</td></tr>`
+      );
     }
-    itemInfo = await response.json();
   }
-  return itemInfo;
+  $("#connection-error").hide();
+  $("#form-file").removeClass("is-invalid");
+  $("#world-descriptor").show();
 }
 
-async function initBossInfo() {
-  if (bossInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/bosses.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Bosses");
+$("#world-input").submit(async (event) => {
+  event.preventDefault();
+  $("#loading").show();
+
+  const file = $("#form-file")[0].files[0];
+  const reader = new FileReader();
+  reader.readAsText(file);
+  reader.onload = async () => {
+    try {
+      let worldAnalysis = null;
+      // Currently the user has to select whether they want to analyze campaign or adventure, but the program should be able to tell
+      // The option will probably be removed in the future though it does make the program more efficient to leave it
+      if ($("#mode-select").val() === "1") {
+        // analyzeCampaign(reader.result);
+        $("#mode-select").addClass("is-invalid");
+      } else {
+        $("#mode-select").removeClass("is-invalid");
+        worldAnalysis = await analyzeAdventure(reader.result);
+      }
+
+      if (worldAnalysis) {
+        renderTable(worldAnalysis);
+      }
+    } catch (error) {
+      if (!(error instanceof ConnectionError)) {
+        $("#form-file").addClass("is-invalid");
+      } else {
+        $("#connection-error").show();
+      }
+      console.log(error);
     }
-    bossInfo = await response.json();
-  }
-}
+    $("#loading").hide();
+  };
 
-async function initDungeonInfo() {
-  if (dungeonInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/dungeons.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Dungeons");
-    }
-    dungeonInfo = await response.json();
-  }
-}
-
-async function initMinibossInfo() {
-  if (minibossInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/minibosses.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Minibosses");
-    }
-    minibossInfo = await response.json();
-  }
-}
-
-async function initSiegeInfo() {
-  if (siegeInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/sieges.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Sieges");
-    }
-    siegeInfo = await response.json();
-  }
-}
-
-// TODO Points of Interest json dictionary
-// function initPointOfInterestInfo() {
-// }
+  reader.onerror = () => {
+    $("#form-file").addClass("is-invalid");
+    console.log(reader.error);
+    $("#loading").hide();
+  };
+});
 
 // These are the names of various zones and sub locations
 // I got these from hzla's world analyzer

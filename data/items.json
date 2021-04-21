@@ -59,6 +59,14 @@
         "eventType": "Item Drop: Head Armor",
         "eventName": "Drifter's Mask"
     },
+    "StrangeCoin": {
+        "eventType": "Key Item",
+        "eventName": "StrangeCoin"
+    },
+    "ReggiesRing": {
+        "eventType": "Key Item",
+        "eventName": "Tarnished Ring"
+    },
     "BandOfStrength": {
         "eventType": "Item Drop: Ring",
         "eventName": "Band of Strength"

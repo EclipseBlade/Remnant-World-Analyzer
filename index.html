@@ -39,13 +39,13 @@
         </ul>
       </div>
 
-      <form id="worldInput" class="mt-2 mb-4 center w-50">
+      <form id="world-input" class="mt-2 mb-4 w-50">
         <div class="mb-3">
-          <label for="modeSelect" class="form-label">Choose Game Mode</label>
+          <label for="mode-select" class="form-label">Choose Game Mode</label>
           <select
-            id="modeSelect"
+            id="mode-select"
             class="form-select"
-            aria-label="Default select example"
+            aria-label="Choose Game Mode"
             required
           >
             <option hidden disabled selected value>Select Mode Here</option>
@@ -56,8 +56,14 @@
         </div>
 
         <div class="mb-3">
-          <label for="formFile" class="form-label">Upload Save File</label>
-          <input class="form-control" type="file" id="formFile" required />
+          <label for="form-file" class="form-label">Upload Save File</label>
+          <input
+            id="form-file"
+            class="form-control"
+            type="file"
+            aria-label="Upload Save File"
+            required
+          />
           <div class="invalid-feedback">Error reading file.</div>
         </div>
 
@@ -68,9 +74,9 @@
         <div class="spinner-border text-light" role="status"></div>
       </div>
 
-      <p id="connectionError">Error: Could Not Connect to Data Files</p>
+      <p id="connection-error">Error: Could Not Connect to Data Files</p>
 
-      <table id="worldDescriptor" class="table">
+      <table id="world-descriptor" class="table">
         <thead>
           <tr>
             <th scope="col">Location</th>
@@ -80,7 +86,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody id="worldInfo"></tbody>
+        <tbody id="world-info"></tbody>
       </table>
     </div>
 

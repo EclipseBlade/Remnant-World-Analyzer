@@ -1,9 +1,12 @@
-body {
-  /* background: url(imgs/RemnantBackground.jpg) no-repeat center center fixed;
+/* html {
+  background: url(imgs/RemnantBackground.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; */
+  background-size: cover;
+} */
+
+body {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
 }
@@ -29,7 +32,7 @@ td {
   margin: 0;
 }
 
-.center {
+#world-input {
   margin: 0 auto;
 }
 
@@ -37,13 +40,13 @@ td {
   display: none;
 }
 
-#connectionError {
+#connection-error {
   display: none;
   font-size: 25px;
   text-align: center;
   color: #dc3545;
 }
 
-#worldDescriptor {
+#world-descriptor {
   display: none;
 }

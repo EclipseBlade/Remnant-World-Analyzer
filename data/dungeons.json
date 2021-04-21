@@ -3,6 +3,10 @@
     "zone": "Hidden Grotto",
     "eventDetails": [
       {
+        "eventType": "Key Item",
+        "eventName": "Hunter's Hideout: Hunter's Key"
+      },
+      {
         "eventType": "Quest Reward",
         "eventName": "Hunter's Hideout: Hunting Pistol"
       }
@@ -12,7 +16,7 @@
     "zone": "Sorrow's Field",
     "eventDetails": [
       {
-        "eventType": "Quest Item",
+        "eventType": "Key Item",
         "eventName": "Supply Run: Monkey Key"
       },
       {
@@ -47,7 +51,7 @@
     "zone": "Vault of the Heralds",
     "eventDetails": [
       {
-        "eventType": "Quest Item",
+        "eventType": "Key Item",
         "eventName": "Armor Vault: Glowing Rod"
       },
       {
@@ -69,7 +73,7 @@
     "zone": "Fetid Pools",
     "eventDetails": [
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Amulet",
         "eventName": "Fetid Pools: Rusted Amulet"
       },
       {
@@ -79,6 +83,14 @@
       {
         "eventType": "Quest Reward",
         "eventName": "Fetid Pools: Hero's Ring"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Fetid Pools: 2 Simulacrum"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Fetid Pools: Simulacrum"
       }
     ]
   },
@@ -108,11 +120,11 @@
         "eventName": "Blink Thief"
       },
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Long Gun",
         "eventName": "Ricochet Rifle"
       },
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Ring",
         "eventName": "Celerity Stone"
       }
     ]
