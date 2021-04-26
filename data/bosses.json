@@ -6,7 +6,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "Singe"
+        "eventName": "Singe",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Singe"
+        ]
       }
     ]
   },
@@ -17,7 +20,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "The Ent"
+        "eventName": "The Ent",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Ent"
+        ]
       }
     ]
   },
@@ -28,7 +34,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "The Harrow"
+        "eventName": "The Harrow",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Harrow"
+        ]
       }
     ]
   },
@@ -39,7 +48,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "Claviger"
+        "eventName": "Claviger",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Claviger"
+        ]
       }
     ]
   },
@@ -51,7 +63,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "Claviger"
+        "eventName": "Claviger",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Claviger"
+        ]
       }
     ]
   },
@@ -62,7 +77,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "The Unclean One"
+        "eventName": "The Unclean One",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Unclean+One"
+        ]
       }
     ]
   },
@@ -73,7 +91,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "Ixillis"
+        "eventName": "Ixillis",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Ixillis"
+        ]
       }
     ]
   },
@@ -84,7 +105,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "Totem Father"
+        "eventName": "Totem Father",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Totem+Father"
+        ]
       }
     ]
   },
@@ -95,7 +119,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "The Ravager"
+        "eventName": "The Ravager",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Ravager+Shrine"
+        ]
       }
     ]
   },
@@ -106,7 +133,10 @@
     "eventDetails": [
       {
         "eventType": "World Boss",
-        "eventName": "Brudvaak, the Rider and Vargr"
+        "eventName": "Brudvaak, the Rider and Vargr",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Brudvaak,+the+Rider+and+Vargr,+the+Warg"
+        ]
       }
     ]
   }

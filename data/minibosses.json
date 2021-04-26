@@ -7,7 +7,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Brabus"
+        "eventName": "Brabus",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Brabus"
+        ]
       }
     ]
   },
@@ -19,7 +22,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Gorefist"
+        "eventName": "Gorefist",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Gorefist"
+        ]
       }
     ]
   },
@@ -31,7 +37,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "The Mangler"
+        "eventName": "The Mangler",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Mangler"
+        ]
       }
     ]
   },
@@ -43,7 +52,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Shroud"
+        "eventName": "Shroud",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Shroud"
+        ]
       }
     ]
   },
@@ -55,11 +67,17 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Riphide"
+        "eventName": "Riphide",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Riphide"
+        ]
       },
       {
         "eventType": "Item Drop: Armor Set",
-        "eventName": "Leto's Armor Set"
+        "eventName": "Leto's Armor Set",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Leto's+Set"
+        ]
       }
     ]
   },
@@ -71,7 +89,11 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Houndmaster and Maul"
+        "eventName": "Houndmaster and Maul",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Houndmaster",
+          "https://remnantfromtheashes.wiki.fextralife.com/Maul"
+        ]
       }
     ]
   },
@@ -83,7 +105,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Raze"
+        "eventName": "Raze",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Raze"
+        ]
       }
     ]
   },
@@ -95,7 +120,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Scourge"
+        "eventName": "Scourge",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Scourge"
+        ]
       }
     ]
   },
@@ -107,7 +135,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Shade and Shatter"
+        "eventName": "Shade and Shatter",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Shade+and+Shatter"
+        ]
       }
     ]
   },
@@ -119,7 +150,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Barbed Terror"
+        "eventName": "Barbed Terror",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Barbed+Terror"
+        ]
       }
     ]
   },
@@ -131,7 +165,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Dream Eater"
+        "eventName": "Dream Eater",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Dream+Eater"
+        ]
       }
     ]
   },
@@ -143,7 +180,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Canker"
+        "eventName": "Canker",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Canker"
+        ]
       }
     ]
   },
@@ -155,7 +195,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "The Thrall"
+        "eventName": "The Thrall",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Thrall"
+        ]
       }
     ]
   },
@@ -167,7 +210,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "The Warden"
+        "eventName": "The Warden",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/The+Warden"
+        ]
       }
     ]
   },
@@ -179,7 +225,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Onslaught"
+        "eventName": "Onslaught",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Onslaught"
+        ]
       }
     ]
   },
@@ -191,7 +240,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Stormcaller"
+        "eventName": "Stormcaller",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Stormcaller"
+        ]
       }
     ]
   },
@@ -203,7 +255,10 @@
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
-        "eventName": "Sear and Scald"
+        "eventName": "Sear and Scald",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Scald+and+Sear"
+        ]
       }
     ]
   }
