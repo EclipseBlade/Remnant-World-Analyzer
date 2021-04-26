@@ -1,206 +1,359 @@
 {
     "TraitBook": {
         "eventType": "Item Drop",
-        "eventName": "Trait Book"
+        "eventName": "Tome of Knowledge",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Tome+of+Knowledge"
+        ]
     },
     "Simulacrum": {
         "eventType": "Item Drop",
-        "eventName": "Simulacrum"
+        "eventName": "Simulacrum",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Simulacrum"
+        ]
     },
     "AggressorsBane": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Aggressor's Bane"
+        "eventName": "Aggressor's Bane",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Aggressor's+Bane"
+        ]
     },
     "BandOfCastor": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Band of Castor"
+        "eventName": "Band of Castor",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Castor"
+        ]
     },
     "BandOfPollux": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Band of Pollux"
+        "eventName": "Band of Pollux",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Pollux"
+        ]
     },
     "BurdenOfTheGambler": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Burden of the Gambler"
+        "eventName": "Burden of the Gambler",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Gambler"
+        ]
     },
     "GunslingersRing": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Gunslinger's Ring"
+        "eventName": "Gunslinger's Ring",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Gunslinger's+Ring"
+        ]
     },
     "Heartseeker": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Heartseeker"
+        "eventName": "Heartseeker",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Heartseeker"
+        ]
     },
     "PillarOfStone": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Pillar of Stone"
+        "eventName": "Pillar of Stone",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Pillar+of+Stone"
+        ]
     },
     "RingOfEvasion": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Ring of Evasion"
+        "eventName": "Ring of Evasion",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Evasion"
+        ]
     },
     "Sagestone": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Sagestone"
+        "eventName": "Sagestone",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Sagestone"
+        ]
     },
     "StockpileCirclet": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Stockpile Circlet"
+        "eventName": "Stockpile Circlet",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Stockpile+Circlet"
+        ]
     },
-    "GunslingesCharm": {
+    "GunslingersCharm": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Gunslinger's Charm"
+        "eventName": "Gunslinger's Charm",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Gunslinger's+Charm"
+        ]
     },
     "Penitent": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Leto's Amulet"
+        "eventName": "Leto's Amulet",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Leto's+Amulet"
+        ]
     },
     "DriftersMask": {
         "eventType": "Item Drop: Head Armor",
-        "eventName": "Drifter's Mask"
+        "eventName": "Drifter's Mask",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Drifter's+Mask"
+        ]
     },
     "StrangeCoin": {
         "eventType": "Key Item",
-        "eventName": "StrangeCoin"
+        "eventName": "StrangeCoin",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Strange+Coin"
+        ]
     },
     "ReggiesRing": {
         "eventType": "Key Item",
-        "eventName": "Tarnished Ring"
+        "eventName": "Tarnished Ring",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Tarnished+Ring"
+        ]
     },
     "BandOfStrength": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Band of Strength"
+        "eventName": "Band of Strength",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Strength"
+        ]
     },
     "BurdenOfTheReckless": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Burden of the Reckless"
+        "eventName": "Burden of the Reckless",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Reckless"
+        ]
     },
     "CompulsionLoop": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Compulsion Loop"
+        "eventName": "Compulsion Loop",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Compulsion+Loop"
+        ]
     },
     "DeceiversBand": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Deceiver's Band"
+        "eventName": "Deceiver's Band",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Deceiver's+Band"
+        ]
     },
     "EzlansBand": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Ezlan's Band"
+        "eventName": "Ezlan's Band",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Ezlan's+Band"
+        ]
     },
     "GravityStone": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Gravity Stone"
+        "eventName": "Gravity Stone",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Gravity+Stone"
+        ]
     },
     "HuntersHalo": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Hunter's Halo"
+        "eventName": "Hunter's Halo",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Halo"
+        ]
     },
     "LeechEmber": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Leech Ember"
+        "eventName": "Leech Ember",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Leech+Ember"
+        ]
     },
     "RingOfElusion": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Ring of Elusion"
+        "eventName": "Ring of Elusion",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Elusion"
+        ]
     },
     "BrutalMark": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Brutal Mark"
+        "eventName": "Brutal Mark",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Brutal+Mark"
+        ]
     },
     "CleansingJewel": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Cleansing Jewel"
+        "eventName": "Cleansing Jewel",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Cleansing+Jewel"
+        ]
     },
     "GalenicCharm": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Galenic Charm"
+        "eventName": "Galenic Charm",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Galenic+Charm"
+        ]
     },
     "RadioactiveEmber": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Radioactive Ember"
+        "eventName": "Radioactive Ember",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Radioactive+Ember"
+        ]
     },
     "TalismanOfAnimosity": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Talisman of Animosity"
+        "eventName": "Talisman of Animosity",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Talisman+of+Animosity"
+        ]
     },
     "BloodFont": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Blood Font"
+        "eventName": "Blood Font",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Blood+Font"
+        ]
     },
     "BurdenOfTheDevoted": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Burden of the Devoted"
+        "eventName": "Burden of the Devoted",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Devoted"
+        ]
     },
     "DevouringLoop": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Devouring Loop"
+        "eventName": "Devouring Loop",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Devouring+Loop"
+        ]
     },
     "RazorStone": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Razorstone"
+        "eventName": "Razorstone",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Razorstone"
+        ]
     },
     "AbrasiveAmulet": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Abrasive Amulet"
+        "eventName": "Abrasive Amulet",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Abrasive+Amulet"
+        ]
     },
     "ButchersFetish": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Butcher's Fetish"
+        "eventName": "Butcher's Fetish",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Butcher's+Fetish"
+        ]
     },
     "RockOfAnguish": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Rock of Anguish"
+        "eventName": "Rock of Anguish",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Rock+of+Anguish"
+        ]
     },
     "SketterlingBlack": {
         "eventType": "Sketterling Temple",
-        "eventName": "Black Vikorian Beetle"
+        "eventName": "Black Vikorian Beetle",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Sketterling+Temple"
+        ]
     },
     "SketterlingRed": {
         "eventType": "Sketterling Temple",
-        "eventName": "Red Vikorian Beetle"
+        "eventName": "Red Vikorian Beetle",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Sketterling+Temple"
+        ]
     },
     "BurdenOfTheFollower": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Burden of the Follower"
+        "eventName": "Burden of the Follower",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Follower"
+        ]
     },
     "HuntersBand": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Hunter's Band"
+        "eventName": "Hunter's Band",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Band"
+        ]
     },
     "KeepersRing": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Keeper's Ring"
+        "eventName": "Keeper's Ring",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Keeper's+Ring"
+        ]
     },
     "PearlOfLuminescence": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Pearl of Luminescence"
+        "eventName": "Pearl of Luminescence",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Pearl+of+Luminescence"
+        ]
     },
     "RestrictionCord": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Restriction Cord"
+        "eventName": "Restriction Cord",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Restriction+Cord"
+        ]
     },
     "RingOfShadows": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Ring of Shadows"
+        "eventName": "Ring of Shadows",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Shadows"
+        ]
     },
     "SpiritStone": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Spirit Stone"
+        "eventName": "Spirit Stone",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Spirit+Stone"
+        ]
     },
     "StoneOfBalance": {
         "eventType": "Item Drop: Ring",
-        "eventName": "Stone of Balance"
+        "eventName": "Stone of Balance",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Stone+Of+Balance"
+        ]
     },
     "StalkersBrand": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Stalker's Brand"
+        "eventName": "Stalker's Brand",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Stalkers+Brand"
+        ]
     },
     "StormAmulet": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Storm Amulet"
+        "eventName": "Storm Amulet",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Storm+Amulet"
+        ]
     },
     "VengeanceIdol": {
         "eventType": "Item Drop: Amulet",
-        "eventName": "Vengeance Idol"
+        "eventName": "Vengeance Idol",
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Vengeance+Idol"
+        ]
     }
 }
