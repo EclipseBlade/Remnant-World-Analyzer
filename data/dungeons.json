@@ -1,6 +1,8 @@
 {
   "HuntersHideout": {
-    "zone": "Hidden Grotto",
+    "zone": [
+      "Hidden Grotto"
+    ],
     "eventDetails": [
       {
         "eventType": "Key Item",
@@ -13,7 +15,9 @@
     ]
   },
   "LastWill": {
-    "zone": "Sorrow's Field",
+    "zone": [
+      "Sorrow's Field"
+    ],
     "eventDetails": [
       {
         "eventType": "Key Item",
@@ -26,7 +30,9 @@
     ]
   },
   "MadMerchant": {
-    "zone": "Junktown",
+    "zone": [
+      "Junktown"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -35,7 +41,9 @@
     ]
   },
   "RootCultist": {
-    "zone": "Marrow Pass",
+    "zone": [
+      "Marrow Pass"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -48,7 +56,9 @@
     ]
   },
   "ArmorVault": {
-    "zone": "Vault of the Heralds",
+    "zone": [
+      "Vault of the Heralds"
+    ],
     "eventDetails": [
       {
         "eventType": "Key Item",
@@ -61,7 +71,9 @@
     ]
   },
   "TheCleanRoom": {
-    "zone": "The Purge Hall",
+    "zone": [
+      "The Purge Hall"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -70,7 +82,9 @@
     ]
   },
   "FetidPool": {
-    "zone": "Fetid Pools",
+    "zone": [
+      "Fetid Pools"
+    ],
     "eventDetails": [
       {
         "eventType": "Item Drop: Amulet",
@@ -95,7 +109,9 @@
     ]
   },
   "QueensTemple": {
-    "zone": "Iskal Sanctum",
+    "zone": [
+      "Iskal Sanctum"
+    ],
     "eventDetails": [
       {
         "eventType": "Ungodly Boss",
@@ -104,7 +120,9 @@
     ]
   },
   "Wisp": {
-    "zone": "Circlet Hatchery",
+    "zone": [
+      "Circlet Hatchery"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -113,7 +131,9 @@
     ]
   },
   "BlinkThief": {
-    "zone": "The Verdant Strand",
+    "zone": [
+      "The Verdant Strand"
+    ],
     "eventDetails": [
       {
         "eventType": "Mini Boss",
@@ -130,24 +150,13 @@
     ]
   },
   "DoeShrine": {
-    "zone": "Widow's Vestry",
+    "zone": [
+      "Widow's Vestry"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
         "eventName": "The Doe Shrine: Scavenger's Bauble"
-      }
-    ]
-  },
-  "GuardianShrine": {
-    "zone": "Guardian Shrine",
-    "eventDetails": [
-      {
-        "eventType": "Quest Reward",
-        "eventName": "Guardian Shrine: Radiant Visage"
-      },
-      {
-        "eventType": "Quest Reward",
-        "eventName": "Guardian Shrine: Trait Book"
       }
     ]
   }

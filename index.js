@@ -85,8 +85,8 @@ async function initSiegeInfo() {
 // }
 
 // Makes deep copy of event to avoid editing dictionary
-function deepCopy({ zone, eventDetails }) {
-  return { zone, eventDetails: [...eventDetails] };
+function deepCopy(order, { zone, eventDetails }) {
+  return { order, zone, eventDetails: [...eventDetails] };
 }
 
 function getWorld(location) {
@@ -189,24 +189,27 @@ async function analyzeAdventure(fileText) {
         break;
       // A boss is the world boss like Singe, Claviger, Ixiillis, or The Ravager
       case "boss":
+        if (eventInfo[1] === "WastelandGuardian") {
+          eventInfo[1] += "Adventure";
+        }
         if (!(eventInfo[1] in bossInfo)) {
           throw new Error("Invalid Boss: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(bossInfo[eventInfo[1]]));
+        eventAccumulator.push(deepCopy(0, bossInfo[eventInfo[1]]));
         break;
       // A smalld is a side dungeon with no boss or siege at the end like Leto's Lab, The Clean Room, Circlet Hatchery, or Widow's Vestry
       case "smalld":
         if (!(eventInfo[1] in dungeonInfo)) {
           throw new Error("Invalid Dungeon: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(dungeonInfo[eventInfo[1]]));
+        eventAccumulator.push(deepCopy(2, dungeonInfo[eventInfo[1]]));
         break;
       // A miniboss is a side dungeon with a fogged wall containing a boss like Gorefist, Raze, Canker, or The Warden
       case "miniboss":
         if (!(eventInfo[1] in minibossInfo)) {
           throw new Error("Invalid Miniboss: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(minibossInfo[eventInfo[1]]));
+        eventAccumulator.push(deepCopy(1, minibossInfo[eventInfo[1]]));
         break;
       // A siege is a side dungeon with a fogged wall containing no boss like A Tale of Two Liz's, The Lost Gantry, or the Matyr's Sanctuary
       // Interestingly enough, Mar'Gosh's Lair is considered a siege because he is sometimes a boss and sometimes an npc
@@ -214,7 +217,7 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in siegeInfo)) {
           throw new Error("Invalid Siege: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(siegeInfo[eventInfo[1]]));
+        eventAccumulator.push(deepCopy(3, siegeInfo[eventInfo[1]]));
         break;
       // A overworldpoi is a point of interest like Mud Tooth, the Monolith, the Abandoned Throne, the Flautist, and the Cryptolith
       // A point of interest is sometimes refered to as a world event
@@ -222,6 +225,7 @@ async function analyzeAdventure(fileText) {
         // This is not finished it will be more descriptive later on
         eventAccumulator.push({
           zone: "Overworld",
+          order: 4,
           eventDetails: [
             {
               eventType: "Point of Interest",
@@ -266,6 +270,7 @@ async function analyzeAdventure(fileText) {
 
   const worldEvents = advText
     .reduce(readEventReducer, [])
+    .sort((a, b) => a.order - b.order)
     .map(({ zone, eventDetails }) => ({
       zone,
       eventDetails: eventDetails.sort(compareEvents),
@@ -279,10 +284,17 @@ async function analyzeAdventure(fileText) {
 function renderTable({ world, worldEvents }) {
   $("#world-info").empty();
   for (const { zone, eventDetails } of worldEvents) {
-    for (const { eventType, eventName } of eventDetails) {
-      $("#world-info").append(
-        `<tr><td>${world}</td><td>${zone}</td><td>${eventType}</td><td>${eventName}</td></tr>`
-      );
+    for (let i = 0; i < eventDetails.length; i++) {
+      const { eventType, eventName } = eventDetails[i];
+      if (zone.length === 2 && i === 1) {
+        $("#world-info").append(
+          `<tr><td>${world}</td><td>${zone[0]}(${zone[1]})</td><td>${eventType}</td><td>${eventName}</td></tr>`
+        );
+      } else {
+        $("#world-info").append(
+          `<tr><td>${world}</td><td>${zone[0]}</td><td>${eventType}</td><td>${eventName}</td></tr>`
+        );
+      }
     }
   }
   $("#connection-error").hide();
@@ -302,9 +314,9 @@ $("#world-input").submit(async (event) => {
       let worldAnalysis = null;
       // Currently the user has to select whether they want to analyze campaign or adventure, but the program should be able to tell
       // The option will probably be removed in the future though it does make the program more efficient to leave it
-      if ($("#mode-select").val() === "1") {
-        // analyzeCampaign(reader.result);
+      if ($("#mode-select").val() === "Campaign") {
         $("#mode-select").addClass("is-invalid");
+        // analyzeCampaign(reader.result);
       } else {
         $("#mode-select").removeClass("is-invalid");
         worldAnalysis = await analyzeAdventure(reader.result);
@@ -314,10 +326,10 @@ $("#world-input").submit(async (event) => {
         renderTable(worldAnalysis);
       }
     } catch (error) {
-      if (!(error instanceof ConnectionError)) {
-        $("#form-file").addClass("is-invalid");
-      } else {
+      if (error instanceof ConnectionwError) {
         $("#connection-error").show();
+      } else {
+        $("#form-file").addClass("is-invalid");
       }
       console.log(error);
     }

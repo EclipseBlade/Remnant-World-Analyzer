@@ -1,6 +1,8 @@
 {
   "RootDragon": {
-    "zone": "The Ash Yard",
+    "zone": [
+      "The Ash Yard"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -9,7 +11,9 @@
     ]
   },
   "RootEnt": {
-    "zone": "The Choking Hollow",
+    "zone": [
+      "The Choking Hollow"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -18,7 +22,9 @@
     ]
   },
   "TheHarrow": {
-    "zone": "The Bunker",
+    "zone": [
+      "The Bunker"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -26,8 +32,22 @@
       }
     ]
   },
-  "WastelandGuardian": {
-    "zone": "Loom of the Black Sun",
+  "WastelandGuardianAdventure": {
+    "zone": [
+      "The Spindle"
+    ],
+    "eventDetails": [
+      {
+        "eventType": "World Boss",
+        "eventName": "Claviger"
+      }
+    ]
+  },
+  "WastelandGuardianCampaign": {
+    "zone": [
+      "Loom of the Black Sun",
+      "The Spindle"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -36,7 +56,9 @@
     ]
   },
   "Fatty": {
-    "zone": "The Shack",
+    "zone": [
+      "The Shack"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -45,7 +67,9 @@
     ]
   },
   "SwampGuardian": {
-    "zone": "The Grotto",
+    "zone": [
+      "The Grotto"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -54,7 +78,9 @@
     ]
   },
   "TotemFather": {
-    "zone": "The Scalding Glade",
+    "zone": [
+      "The Scalding Glade"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -63,7 +89,9 @@
     ]
   },
   "Wolf": {
-    "zone": "Ravager's Haunt",
+    "zone": [
+      "Ravager's Haunt"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",
@@ -72,7 +100,9 @@
     ]
   },
   "RatRider": {
-    "zone": "Crimson Hold",
+    "zone": [
+      "Crimson Hold"
+    ],
     "eventDetails": [
       {
         "eventType": "World Boss",

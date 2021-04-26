@@ -18,6 +18,11 @@ h1 {
   margin: 2rem 0;
 }
 
+h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
 th,
 td {
   color: white;
@@ -26,10 +31,6 @@ td {
 .narrow {
   margin: 0 auto;
   max-width: 50%;
-}
-
-.issues-desc {
-  margin: 0;
 }
 
 #world-input {

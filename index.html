@@ -20,15 +20,20 @@
     <h1>Remnant: From the Ashes World Analyzer</h1>
     <!-- TODO 2 Columns maybe flexbox -->
     <div class="narrow">
-      <p class="mb-3">
-        How to use:<br />
-        Navigate to %LOCALAPPDATA%/Remnant/Saved/SaveGames and locate the file
-        named something like save_0.bak or save_0.sav. Upload to see what you
-        rolled.
-      </p>
+      <div class="mb-3">
+        <h2>How to Use:</h2>
+        <ul class="list-style">
+          <li>
+            Navigate to %LOCALAPPDATA%/Remnant/Saved/SaveGames and locate the
+            file named something like save_0.bak or save_0.sav
+          </li>
+          <li>Select the game mode of the save file</li>
+          <li>Upload the save file</li>
+        </ul>
+      </div>
 
       <div class="mb-4">
-        <p class="issues-desc">Known Issues:</p>
+        <h2>Known Issues:</h2>
         <ul class="list-style">
           <li>Campaign does not work</li>
           <li>Reisum does not work</li>
@@ -49,10 +54,10 @@
             required
           >
             <option hidden disabled selected value>Select Mode Here</option>
-            <option value="1">Campaign</option>
-            <option value="2">Adventure</option>
+            <option value="Campaign">Campaign</option>
+            <option value="Adventure">Adventure</option>
           </select>
-          <div class="invalid-feedback">Not supported yet.</div>
+          <div class="invalid-feedback">Not supported yet</div>
         </div>
 
         <div class="mb-3">
@@ -64,7 +69,7 @@
             aria-label="Upload Save File"
             required
           />
-          <div class="invalid-feedback">Error reading file.</div>
+          <div class="invalid-feedback">Error reading file</div>
         </div>
 
         <button class="btn btn-primary mt-2" type="submit">Explore!</button>
