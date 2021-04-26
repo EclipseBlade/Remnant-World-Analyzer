@@ -224,7 +224,7 @@ async function analyzeAdventure(fileText) {
       case "overworldpoi":
         // This is not finished it will be more descriptive later on
         eventAccumulator.push({
-          zone: "Overworld",
+          zone: ["Overworld"],
           order: 4,
           eventDetails: [
             {
@@ -286,9 +286,9 @@ function renderTable({ world, worldEvents }) {
   for (const { zone, eventDetails } of worldEvents) {
     for (let i = 0; i < eventDetails.length; i++) {
       const { eventType, eventName } = eventDetails[i];
-      if (zone.length === 2 && i === 1) {
+      if (zone.length === 2 && i === 0) {
         $("#world-info").append(
-          `<tr><td>${world}</td><td>${zone[0]}(${zone[1]})</td><td>${eventType}</td><td>${eventName}</td></tr>`
+          `<tr><td>${world}</td><td>${zone[0]} (${zone[1]})</td><td>${eventType}</td><td>${eventName}</td></tr>`
         );
       } else {
         $("#world-info").append(
