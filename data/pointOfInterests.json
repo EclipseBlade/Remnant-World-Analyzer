@@ -1,0 +1,15 @@
+{
+    "GuardianShrine": {
+        "zone": "Guardian Shrine",
+        "eventDetails": [
+            {
+                "eventType": "Quest Reward",
+                "eventName": "Guardian Shrine: Radiant Visage"
+            },
+            {
+                "eventType": "Quest Reward",
+                "eventName": "Guardian Shrine: Trait Book"
+            }
+        ]
+    }
+}

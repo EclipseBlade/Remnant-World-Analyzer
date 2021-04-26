@@ -1,7 +1,13 @@
 {
   "HuntersHideout": {
-    "zone": "Hidden Grotto",
+    "zone": [
+      "Hidden Grotto"
+    ],
     "eventDetails": [
+      {
+        "eventType": "Key Item",
+        "eventName": "Hunter's Hideout: Hunter's Key"
+      },
       {
         "eventType": "Quest Reward",
         "eventName": "Hunter's Hideout: Hunting Pistol"
@@ -9,10 +15,12 @@
     ]
   },
   "LastWill": {
-    "zone": "Sorrow's Field",
+    "zone": [
+      "Sorrow's Field"
+    ],
     "eventDetails": [
       {
-        "eventType": "Quest Item",
+        "eventType": "Key Item",
         "eventName": "Supply Run: Monkey Key"
       },
       {
@@ -22,7 +30,9 @@
     ]
   },
   "MadMerchant": {
-    "zone": "Junktown",
+    "zone": [
+      "Junktown"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -31,7 +41,9 @@
     ]
   },
   "RootCultist": {
-    "zone": "Marrow Pass",
+    "zone": [
+      "Marrow Pass"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -44,10 +56,12 @@
     ]
   },
   "ArmorVault": {
-    "zone": "Vault of the Heralds",
+    "zone": [
+      "Vault of the Heralds"
+    ],
     "eventDetails": [
       {
-        "eventType": "Quest Item",
+        "eventType": "Key Item",
         "eventName": "Armor Vault: Glowing Rod"
       },
       {
@@ -57,7 +71,9 @@
     ]
   },
   "TheCleanRoom": {
-    "zone": "The Purge Hall",
+    "zone": [
+      "The Purge Hall"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -66,10 +82,12 @@
     ]
   },
   "FetidPool": {
-    "zone": "Fetid Pools",
+    "zone": [
+      "Fetid Pools"
+    ],
     "eventDetails": [
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Amulet",
         "eventName": "Fetid Pools: Rusted Amulet"
       },
       {
@@ -79,11 +97,21 @@
       {
         "eventType": "Quest Reward",
         "eventName": "Fetid Pools: Hero's Ring"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Fetid Pools: 2 Simulacrum"
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Fetid Pools: Simulacrum"
       }
     ]
   },
   "QueensTemple": {
-    "zone": "Iskal Sanctum",
+    "zone": [
+      "Iskal Sanctum"
+    ],
     "eventDetails": [
       {
         "eventType": "Ungodly Boss",
@@ -92,7 +120,9 @@
     ]
   },
   "Wisp": {
-    "zone": "Circlet Hatchery",
+    "zone": [
+      "Circlet Hatchery"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -101,41 +131,32 @@
     ]
   },
   "BlinkThief": {
-    "zone": "The Verdant Strand",
+    "zone": [
+      "The Verdant Strand"
+    ],
     "eventDetails": [
       {
         "eventType": "Mini Boss",
         "eventName": "Blink Thief"
       },
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Long Gun",
         "eventName": "Ricochet Rifle"
       },
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Ring",
         "eventName": "Celerity Stone"
       }
     ]
   },
   "DoeShrine": {
-    "zone": "Widow's Vestry",
+    "zone": [
+      "Widow's Vestry"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
         "eventName": "The Doe Shrine: Scavenger's Bauble"
-      }
-    ]
-  },
-  "GuardianShrine": {
-    "zone": "Guardian Shrine",
-    "eventDetails": [
-      {
-        "eventType": "Quest Reward",
-        "eventName": "Guardian Shrine: Radiant Visage"
-      },
-      {
-        "eventType": "Quest Reward",
-        "eventName": "Guardian Shrine: Trait Book"
       }
     ]
   }

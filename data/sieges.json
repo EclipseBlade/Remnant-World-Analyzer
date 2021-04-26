@@ -1,9 +1,12 @@
 {
   "LizAndLiz": {
-    "zone": "The Warren",
+    "zone": [
+      "The Warren",
+      "Land's End"
+    ],
     "eventDetails": [
       {
-        "eventType": "Quest Item",
+        "eventType": "Key Item",
         "eventName": "A Tale of Two Liz's: Liz's Key (Defend Both Liz's)"
       },
       {
@@ -13,7 +16,9 @@
     ]
   },
   "RootShrine": {
-    "zone": "The Gallows",
+    "zone": [
+      "The Gallows"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -22,7 +27,10 @@
     ]
   },
   "TheLostGantry": {
-    "zone": "Concourse of the Sun",
+    "zone": [
+      "Concourse of the Sun",
+      "The Lost Gantry"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -31,7 +39,10 @@
     ]
   },
   "BrainBug": {
-    "zone": "Strange Pass",
+    "zone": [
+      "Strange Pass",
+      "Margosh's Lair"
+    ],
     "eventDetails": [
       {
         "eventType": "Mini Boss/NPC",
@@ -44,7 +55,10 @@
     ]
   },
   "TheRisen": {
-    "zone": "Ahanae's Lament",
+    "zone": [
+      "Ahanae's Lament",
+      "The Radiant Tomb"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",
@@ -53,7 +67,10 @@
     ]
   },
   "WolfShrine": {
-    "zone": "Matyr's Sanctuary",
+    "zone": [
+      "Temple of the Ravager",
+      "Martyr's Sanctuary"
+    ],
     "eventDetails": [
       {
         "eventType": "Quest Reward",

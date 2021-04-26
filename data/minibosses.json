@@ -1,6 +1,9 @@
 {
   "Brabus": {
-    "zone": "Cutthroat Channel",
+    "zone": [
+      "Cutthroat Channel",
+      "The Depot"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -9,7 +12,10 @@
     ]
   },
   "RootBrute": {
-    "zone": "Sunken Passage",
+    "zone": [
+      "Sunken Passage",
+      "The Grinder"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -18,7 +24,10 @@
     ]
   },
   "RootTumbleweed": {
-    "zone": "The Tangled Pass",
+    "zone": [
+      "The Tangled Pass",
+      "The Artery"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -27,7 +36,10 @@
     ]
   },
   "RootWraith": {
-    "zone": "The Hidden Sanctum",
+    "zone": [
+      "The Hidden Sanctum",
+      "The Tainted Well"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -36,20 +48,26 @@
     ]
   },
   "Splitter": {
-    "zone": "Leto's Lab",
+    "zone": [
+      "Leto's Lab",
+      "The Cursed Station"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
         "eventName": "Riphide"
       },
       {
-        "eventType": "Item Drop",
+        "eventType": "Item Drop: Armor Set",
         "eventName": "Leto's Armor Set"
       }
     ]
   },
   "HoundMaster": {
-    "zone": "The Burrow",
+    "zone": [
+      "The Burrow",
+      "Stalker's Den"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -58,7 +76,10 @@
     ]
   },
   "Sentinel": {
-    "zone": "Shackled Canyon",
+    "zone": [
+      "Shackled Canyon",
+      "Lair of the Eyeless"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -67,7 +88,10 @@
     ]
   },
   "SwarmMaster": {
-    "zone": "The Iron Rift",
+    "zone": [
+      "The Iron Rift",
+      "The Hive"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -76,7 +100,10 @@
     ]
   },
   "Vyr": {
-    "zone": "The Ardent Temple",
+    "zone": [
+      "The Ardent Temple",
+      "Hall of the Faithful"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -85,7 +112,10 @@
     ]
   },
   "BarbTerror": {
-    "zone": "Needle Lair",
+    "zone": [
+      "Needle Lair",
+      "Throne of Barbs"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -94,7 +124,10 @@
     ]
   },
   "FlickeringHorror": {
-    "zone": "Hall of Whispers",
+    "zone": [
+      "Hall of Whispers",
+      "Corrupted Sanctum"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -103,7 +136,10 @@
     ]
   },
   "SlimeHulk": {
-    "zone": "The Drowned Trench",
+    "zone": [
+      "The Drowned Trench",
+      "Mire Hollow"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -112,7 +148,10 @@
     ]
   },
   "Tyrant": {
-    "zone": "The Capillary",
+    "zone": [
+      "The Capillary",
+      "Musk Forge"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -121,7 +160,10 @@
     ]
   },
   "KinCaller": {
-    "zone": "The Hall of Judgement",
+    "zone": [
+      "The Hall of Judgement",
+      "The Ring of Trials"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -130,7 +172,10 @@
     ]
   },
   "BlinkFiend": {
-    "zone": "Widow's Pass",
+    "zone": [
+      "Widow's Pass",
+      "Noble's Rest"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -139,7 +184,10 @@
     ]
   },
   "StormCaller": {
-    "zone": "Heretic's Nest",
+    "zone": [
+      "Heretic's Nest",
+      "Matyr's Garden"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",
@@ -148,7 +196,10 @@
     ]
   },
   "ImmolatorAndZephyr": {
-    "zone": "Withering Village",
+    "zone": [
+      "Withering Village",
+      "Warden's Pulpit"
+    ],
     "eventDetails": [
       {
         "eventType": "Dungeon Boss",

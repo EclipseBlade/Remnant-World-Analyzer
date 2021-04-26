@@ -20,15 +20,20 @@
     <h1>Remnant: From the Ashes World Analyzer</h1>
     <!-- TODO 2 Columns maybe flexbox -->
     <div class="narrow">
-      <p class="mb-3">
-        How to use:<br />
-        Navigate to %LOCALAPPDATA%/Remnant/Saved/SaveGames and locate the file
-        named something like save_0.bak or save_0.sav. Upload to see what you
-        rolled.
-      </p>
+      <div class="mb-3">
+        <h2>How to Use:</h2>
+        <ul class="list-style">
+          <li>
+            Navigate to %LOCALAPPDATA%/Remnant/Saved/SaveGames and locate the
+            file named something like save_0.bak or save_0.sav
+          </li>
+          <li>Select the game mode of the save file</li>
+          <li>Upload the save file</li>
+        </ul>
+      </div>
 
       <div class="mb-4">
-        <p class="issues-desc">Known Issues:</p>
+        <h2>Known Issues:</h2>
         <ul class="list-style">
           <li>Campaign does not work</li>
           <li>Reisum does not work</li>
@@ -39,26 +44,32 @@
         </ul>
       </div>
 
-      <form class="mt-2 mb-4 center w-50" onsubmit="return submitForm(event)">
+      <form id="world-input" class="mt-2 mb-4 w-50">
         <div class="mb-3">
-          <label for="modeSelect" class="form-label">Choose Game Mode</label>
+          <label for="mode-select" class="form-label">Choose Game Mode</label>
           <select
-            id="modeSelect"
+            id="mode-select"
             class="form-select"
-            aria-label="Default select example"
+            aria-label="Choose Game Mode"
             required
           >
             <option hidden disabled selected value>Select Mode Here</option>
-            <option value="1">Campaign</option>
-            <option value="2">Adventure</option>
+            <option value="Campaign">Campaign</option>
+            <option value="Adventure">Adventure</option>
           </select>
-          <div class="invalid-feedback">Not supported yet.</div>
+          <div class="invalid-feedback">Not supported yet</div>
         </div>
 
         <div class="mb-3">
-          <label for="formFile" class="form-label">Upload Save File</label>
-          <input class="form-control" type="file" id="formFile" required />
-          <div class="invalid-feedback">Error reading file.</div>
+          <label for="form-file" class="form-label">Upload Save File</label>
+          <input
+            id="form-file"
+            class="form-control"
+            type="file"
+            aria-label="Upload Save File"
+            required
+          />
+          <div class="invalid-feedback">Error reading file</div>
         </div>
 
         <button class="btn btn-primary mt-2" type="submit">Explore!</button>
@@ -68,9 +79,9 @@
         <div class="spinner-border text-light" role="status"></div>
       </div>
 
-      <p id="connectionError">Error: Could Not Connect to Data Files</p>
+      <p id="connection-error">Error: Could Not Connect to Data Files</p>
 
-      <table id="worldDescriptor" class="table">
+      <table id="world-descriptor" class="table">
         <thead>
           <tr>
             <th scope="col">Location</th>
@@ -80,7 +91,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody id="worldInfo"></tbody>
+        <tbody id="world-info"></tbody>
       </table>
     </div>
 
