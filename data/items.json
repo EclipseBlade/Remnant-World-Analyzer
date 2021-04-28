@@ -463,7 +463,8 @@
     "CreepersPeepers": {
         "eventType": "Quest Reward: Hand Gun",
         "eventName": [
-            "Creepers Peepers: Twin Shot"
+            "Creepers Peepers",
+            "Twin Shot"
         ],
         "eventLink": [
             "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers",
