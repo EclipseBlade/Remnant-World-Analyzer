@@ -105,7 +105,7 @@ function deepCloneEvent({ zone, eventDetails }) {
   return { zone, eventDetails: eventDetailsCopy };
 }
 
-function deepCloneItem({ eventType, eventName, eventLink }) {
+function E({ eventType, eventName, eventLink }) {
   return { eventType, eventName: [...eventName], eventLink: [...eventLink] };
 }
 
@@ -170,6 +170,12 @@ async function analyzeAdventure(fileText) {
   await initSiegeInfo();
   await initPointOfInterestInfo();
 
+  const overworldZone = {
+    order: 5,
+    zone: ["Overworld"],
+    eventDetails: [],
+  };
+
   // Reads a single event from advText, paired with reduce function
   const readEventReducer = (eventAccumulator, eventText) => {
     const eventInfo = eventText.split(/\/Quest_/)[1].split(/_/);
@@ -182,7 +188,7 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in itemInfo)) {
           throw new Error("Invalid Item: " + eventInfo[1]);
         }
-        const itemEvent = deepCloneItem(itemInfo[eventInfo[1]]);
+        const itemEvent = E(itemInfo[eventInfo[1]]);
 
         // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
         // At the moment, it does not seem possible to identify the drop of the red beetle
@@ -268,12 +274,10 @@ async function analyzeAdventure(fileText) {
             ...deepCloneEvent(dungeonInfo["GuardianShrine"]),
           });
         }
-        const pointOfInterestEvent = {
-          order: 5,
-          ...deepCloneEvent(pointOfInterestInfo[eventInfo[1]]),
-        };
-        pointOfInterestEvent.zone.push("Overworld");
-        eventAccumulator.push(pointOfInterestEvent);
+        for (overworldEvent of pointOfInterestInfo[eventInfo[1]]) {
+          overworldZone.eventDetails.push(deepCloneSubEvent(overworldEvent));
+        }
+        eventAccumulator.push(overworldZone);
         break;
       // The cryptolith is a unique point of interest because it spawns the labyrinth that players can traverse to get the labyrinth armor set
       // This indicates that the labyrinth was spawned
@@ -309,6 +313,9 @@ async function analyzeAdventure(fileText) {
       }
       return 1;
     }
+    if (b.eventType === "Item Drop") {
+      return -1;
+    }
     return 0;
   };
 
@@ -319,7 +326,6 @@ async function analyzeAdventure(fileText) {
       zone,
       eventDetails: eventDetails.sort(compareEvents),
     }));
-  console.log(worldEvents);
 
   return { world, worldEvents };
 }
