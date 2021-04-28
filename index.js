@@ -8,6 +8,7 @@ let bossInfo = null;
 let dungeonInfo = null;
 let minibossInfo = null;
 let siegeInfo = null;
+let pointOfInterestInfo = null;
 
 // seperates standard errors and connection to display different messages on html
 class ConnectionError extends Error {
@@ -80,13 +81,28 @@ async function initSiegeInfo() {
   }
 }
 
-// TODO Points of Interest json dictionary
-// function initPointOfInterestInfo() {
-// }
+async function initPointOfInterestInfo() {
+  if (pointOfInterestInfo === null) {
+    const response = await fetch(
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/pointOfInterests.json"
+    );
+    if (!response.ok) {
+      throw new ConnectionError("Could Not Read Point of Interests");
+    }
+    pointOfInterestInfo = await response.json();
+  }
+}
 
 // Makes deep copy of event to avoid editing dictionary
-function deepCopy(order, { zone, eventDetails }) {
-  return { order, zone, eventDetails: [...eventDetails] };
+function deepClone({ zone, eventDetails }) {
+  const eventDetailsCopy = eventDetails.map(
+    ({ eventType, eventName, eventLink }) => ({
+      eventType,
+      eventName,
+      eventLink: [...eventLink],
+    })
+  );
+  return { zone, eventDetails: eventDetailsCopy };
 }
 
 function getWorld(location) {
@@ -148,6 +164,7 @@ async function analyzeAdventure(fileText) {
   await initDungeonInfo();
   await initMinibossInfo();
   await initSiegeInfo();
+  await initPointOfInterestInfo();
 
   // Reads a single event from advText, paired with reduce function
   const readEventReducer = (eventAccumulator, eventText) => {
@@ -158,9 +175,14 @@ async function analyzeAdventure(fileText) {
     switch (eventInfo[0].toLowerCase()) {
       // An event is usual an item, but there are a few outliers like the sketterling temple
       case "event":
+        if (!(eventInfo[1] in itemInfo)) {
+          throw new Error("Invalid Item: " + eventInfo[1]);
+        }
+        const itemEvent = deepClone(itemInfo[eventInfo[1]]);
+
         // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
         // At the moment, it does not seem possible to identify the drop of the red beetle
-        if (eventInfo[1] === "Sketterling") {
+        if (itemEvent.eventType === "Sketterling Temple") {
           let beetleIndex = -1;
           // Mar'Gosh's Lair means that a second Sketterling can spawn so we have to check for the spawns seperately
           // This will break on more than 2 sketters (Not Sure If Possible)
@@ -177,39 +199,43 @@ async function analyzeAdventure(fileText) {
           }
 
           // Check if the character after g in Bug is an _ or not
-          eventInfo[1] +=
-            fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red";
-        }
-        if (!(eventInfo[1] in itemInfo)) {
-          throw new Error("Invalid Item: " + eventInfo[1]);
+          itemEvent.eventName =
+            (fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red") +
+            itemEvent.eventName;
         }
         eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
-          itemInfo[eventInfo[1]]
+          itemEvent
         );
         break;
       // A boss is the world boss like Singe, Claviger, Ixiillis, or The Ravager
       case "boss":
-        if (eventInfo[1] === "WastelandGuardian") {
-          eventInfo[1] += "Adventure";
-        }
         if (!(eventInfo[1] in bossInfo)) {
           throw new Error("Invalid Boss: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(0, bossInfo[eventInfo[1]]));
-        break;
-      // A smalld is a side dungeon with no boss or siege at the end like Leto's Lab, The Clean Room, Circlet Hatchery, or Widow's Vestry
-      case "smalld":
-        if (!(eventInfo[1] in dungeonInfo)) {
-          throw new Error("Invalid Dungeon: " + eventInfo[1]);
-        }
-        eventAccumulator.push(deepCopy(2, dungeonInfo[eventInfo[1]]));
+        const bossEvent = { sort: 0, ...deepClone(bossInfo[eventInfo[1]]) };
+        eventAccumulator.push(bossEvent);
         break;
       // A miniboss is a side dungeon with a fogged wall containing a boss like Gorefist, Raze, Canker, or The Warden
       case "miniboss":
         if (!(eventInfo[1] in minibossInfo)) {
           throw new Error("Invalid Miniboss: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(1, minibossInfo[eventInfo[1]]));
+        const minibossEvent = {
+          sort: 1,
+          ...deepClone(minibossInfo[eventInfo[1]]),
+        };
+        eventAccumulator.push(minibossEvent);
+        break;
+      // A smalld is a side dungeon with no boss or siege at the end like Leto's Lab, The Clean Room, Circlet Hatchery, or Widow's Vestry
+      case "smalld":
+        if (!(eventInfo[1] in dungeonInfo)) {
+          throw new Error("Invalid Dungeon: " + eventInfo[1]);
+        }
+        const dungeonEvent = {
+          sort: 2,
+          ...deepClone(dungeonInfo[eventInfo[1]]),
+        };
+        eventAccumulator.push(dungeonEvent);
         break;
       // A siege is a side dungeon with a fogged wall containing no boss like A Tale of Two Liz's, The Lost Gantry, or the Matyr's Sanctuary
       // Interestingly enough, Mar'Gosh's Lair is considered a siege because he is sometimes a boss and sometimes an npc
@@ -217,7 +243,8 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in siegeInfo)) {
           throw new Error("Invalid Siege: " + eventInfo[1]);
         }
-        eventAccumulator.push(deepCopy(3, siegeInfo[eventInfo[1]]));
+        const siegeEvent = { sort: 3, ...deepClone(siegeInfo[eventInfo[1]]) };
+        eventAccumulator.push(siegeEvent);
         break;
       // A overworldpoi is a point of interest like Mud Tooth, the Monolith, the Abandoned Throne, the Flautist, and the Cryptolith
       // A point of interest is sometimes refered to as a world event
@@ -242,6 +269,9 @@ async function analyzeAdventure(fileText) {
           eventAccumulator[eventAccumulator.length - 1].eventDetails.push({
             eventType: "Item Drop: Ring",
             eventName: "Soul Link",
+            eventLink: [
+              "https://remnantfromtheashes.wiki.fextralife.com/Soul+Link",
+            ],
           });
         }
         break;
@@ -284,17 +314,40 @@ async function analyzeAdventure(fileText) {
 function renderTable({ world, worldEvents }) {
   $("#world-info").empty();
   for (const { zone, eventDetails } of worldEvents) {
+    let subAreaEvents = 0;
+    if (zone.length == 2) {
+      if (zone[0] === "Strange Pass") {
+        subAreaEvents++;
+      }
+      subAreaEvents++;
+    }
     for (let i = 0; i < eventDetails.length; i++) {
       const { eventType, eventName } = eventDetails[i];
-      if (zone.length === 2 && i === 0) {
-        $("#world-info").append(
-          `<tr><td>${world}</td><td>${zone[0]} (${zone[1]})</td><td>${eventType}</td><td>${eventName}</td></tr>`
-        );
-      } else {
-        $("#world-info").append(
-          `<tr><td>${world}</td><td>${zone[0]}</td><td>${eventType}</td><td>${eventName}</td></tr>`
-        );
+
+      let $row = `<tr><td>${world}</td><td>${zone[0]} `;
+      if (i < subAreaEvents) {
+        $row += `(${zone[1]})`;
       }
+      $row += `</td><td>${eventType}</td>`;
+      if (eventDetails[i].eventLink) {
+        const eventLink = eventDetails[i].eventLink;
+        if (eventLink.length === 2) {
+          const eventNames = eventName.split("-");
+          $row += `<td class="hyperlink"><a href="${eventLink[0]}"  target="_blank">${eventNames[0]}</a>`;
+          if (eventNames[1] === "Maul" || eventNames[1] === "Wud") {
+            $row += " and ";
+          } else {
+            $row += ": ";
+          }
+          $row += `<a href="${eventLink[1]}"  target="_blank">${eventNames[1]}</a></td>`;
+        } else {
+          $row += `<td><a href="${eventLink[0]}"  target="_blank">${eventName}</a></td>`;
+        }
+      } else {
+        $row += `<td><a>${eventName}</a></td>`;
+      }
+      $row += "</tr>";
+      $("#world-info").append($row);
     }
   }
   $("#connection-error").hide();
@@ -333,6 +386,7 @@ $("#world-input").submit(async (event) => {
       }
       console.log(error);
     }
+
     $("#loading").hide();
   };
 

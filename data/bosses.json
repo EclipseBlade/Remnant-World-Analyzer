@@ -41,23 +41,8 @@
       }
     ]
   },
-  "WastelandGuardianAdventure": {
+  "WastelandGuardian": {
     "zone": [
-      "The Spindle"
-    ],
-    "eventDetails": [
-      {
-        "eventType": "World Boss",
-        "eventName": "Claviger",
-        "eventLink": [
-          "https://remnantfromtheashes.wiki.fextralife.com/Claviger"
-        ]
-      }
-    ]
-  },
-  "WastelandGuardianCampaign": {
-    "zone": [
-      "Loom of the Black Sun",
       "The Spindle"
     ],
     "eventDetails": [

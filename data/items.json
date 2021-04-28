@@ -265,16 +265,9 @@
             "https://remnantfromtheashes.wiki.fextralife.com/Rock+of+Anguish"
         ]
     },
-    "SketterlingBlack": {
+    "Sketterling": {
         "eventType": "Sketterling Temple",
-        "eventName": "Black Vikorian Beetle",
-        "eventLink": [
-            "https://remnantfromtheashes.wiki.fextralife.com/Sketterling+Temple"
-        ]
-    },
-    "SketterlingRed": {
-        "eventType": "Sketterling Temple",
-        "eventName": "Red Vikorian Beetle",
+        "eventName": " Vikorian Beetle",
         "eventLink": [
             "https://remnantfromtheashes.wiki.fextralife.com/Sketterling+Temple"
         ]

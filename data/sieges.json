@@ -14,7 +14,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Long Gun",
         "eventName": "A Tale of Two Liz's-Chicago Typewriter",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/A+Tale+of+Two+Liz%27s",
@@ -29,7 +29,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Armor Set",
         "eventName": "The Root Shrine-Twisted Armor Set",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/The+Root+Shrine",
@@ -45,7 +45,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Long Gun",
         "eventName": "The Lost Gantry-Beam Rifle",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/The+Lost+Gantry",
@@ -61,7 +61,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Mini Boss/NPC",
+        "eventType": "NPC/Mini-Boss",
         "eventName": "Brain Bug-Mar'Gosh",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Brain+Bug",
@@ -69,7 +69,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Ring",
         "eventName": "Brain Bug-Gift of the Iskal",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Brain+Bug",
@@ -85,7 +85,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Amulet",
         "eventName": "The Risen-Soul Anchor",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/The+Risen",
@@ -101,7 +101,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Armor Set",
         "eventName": "The Ravager Shrine-Elder Armor Set",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/The+Ravager+Shrine",
