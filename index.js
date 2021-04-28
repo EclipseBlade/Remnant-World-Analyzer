@@ -98,7 +98,7 @@ function deepCloneEvent({ zone, eventDetails }) {
   const eventDetailsCopy = eventDetails.map(
     ({ eventType, eventName, eventLink }) => ({
       eventType,
-      eventName,
+      eventName: [...eventName],
       eventLink: [...eventLink],
     })
   );
@@ -106,7 +106,7 @@ function deepCloneEvent({ zone, eventDetails }) {
 }
 
 function deepCloneItem({ eventType, eventName, eventLink }) {
-  return { eventType, eventName, eventLink: [...eventLink] };
+  return { eventType, eventName: [...eventName], eventLink: [...eventLink] };
 }
 
 function getWorld(location) {
@@ -203,9 +203,9 @@ async function analyzeAdventure(fileText) {
           }
 
           // Check if the character after g in Bug is an _ or not
-          itemEvent.eventName =
+          itemEvent.eventName[0] =
             (fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red") +
-            itemEvent.eventName;
+            itemEvent.eventName[0];
         }
         eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
           itemEvent
@@ -217,7 +217,7 @@ async function analyzeAdventure(fileText) {
           throw new Error("Invalid Boss: " + eventInfo[1]);
         }
         const bossEvent = {
-          sort: 0,
+          order: 0,
           ...deepCloneEvent(bossInfo[eventInfo[1]]),
         };
         eventAccumulator.push(bossEvent);
@@ -228,7 +228,7 @@ async function analyzeAdventure(fileText) {
           throw new Error("Invalid Miniboss: " + eventInfo[1]);
         }
         const minibossEvent = {
-          sort: 1,
+          order: 1,
           ...deepCloneEvent(minibossInfo[eventInfo[1]]),
         };
         eventAccumulator.push(minibossEvent);
@@ -239,7 +239,7 @@ async function analyzeAdventure(fileText) {
           throw new Error("Invalid Dungeon: " + eventInfo[1]);
         }
         const dungeonEvent = {
-          sort: 2,
+          order: 2,
           ...deepCloneEvent(dungeonInfo[eventInfo[1]]),
         };
         eventAccumulator.push(dungeonEvent);
@@ -251,7 +251,7 @@ async function analyzeAdventure(fileText) {
           throw new Error("Invalid Siege: " + eventInfo[1]);
         }
         const siegeEvent = {
-          sort: 3,
+          order: 3,
           ...deepCloneEvent(siegeInfo[eventInfo[1]]),
         };
         eventAccumulator.push(siegeEvent);
@@ -264,12 +264,12 @@ async function analyzeAdventure(fileText) {
         }
         if (eventInfo[1] === "Stuck Merchant") {
           eventAccumulator.push({
-            sort: 4,
+            order: 4,
             ...deepCloneEvent(dungeonInfo["GuardianShrine"]),
           });
         }
         const pointOfInterestEvent = {
-          sort: 5,
+          order: 5,
           ...deepCloneEvent(pointOfInterestInfo[eventInfo[1]]),
         };
         pointOfInterestEvent.zone.push("Overworld");
@@ -282,7 +282,7 @@ async function analyzeAdventure(fileText) {
         if (world === "Rhom") {
           eventAccumulator[eventAccumulator.length - 1].eventDetails.push({
             eventType: "Item Drop: Ring",
-            eventName: "Soul Link",
+            eventName: ["Soul Link"],
             eventLink: [
               "https://remnantfromtheashes.wiki.fextralife.com/Soul+Link",
             ],
@@ -299,10 +299,10 @@ async function analyzeAdventure(fileText) {
   const compareEvents = (a, b) => {
     if (a.eventType === "Item Drop") {
       if (b.eventType === "Item Drop") {
-        if (a.eventName > b.eventName) {
+        if (a.eventName[0] > b.eventName[0]) {
           return 1;
         }
-        if (a.eventName < b.eventName) {
+        if (a.eventName[0] < b.eventName[0]) {
           return -1;
         }
         return 0;
@@ -319,6 +319,7 @@ async function analyzeAdventure(fileText) {
       zone,
       eventDetails: eventDetails.sort(compareEvents),
     }));
+  console.log(worldEvents);
 
   return { world, worldEvents };
 }
@@ -327,7 +328,7 @@ async function analyzeAdventure(fileText) {
 // It would be faster to do display the content in the analyzeMode's switch statement but it would also be harder to read and debug
 function renderTable({ world, worldEvents }) {
   $("#world-info").empty();
-  for (const { zone, eventDetails, eventLink } of worldEvents) {
+  for (const { zone, eventDetails } of worldEvents) {
     let subAreaEvents = 0;
     if (zone.length == 2) {
       if (zone[0] === "Strange Pass") {
@@ -336,7 +337,7 @@ function renderTable({ world, worldEvents }) {
       subAreaEvents++;
     }
     for (let i = 0; i < eventDetails.length; i++) {
-      const { eventType, eventName } = eventDetails[i];
+      const { eventType, eventName, eventLink } = eventDetails[i];
 
       let $row = `<tr><td>${world}</td><td>${zone[0]} `;
       if (i < subAreaEvents) {
@@ -346,8 +347,8 @@ function renderTable({ world, worldEvents }) {
 
       if (eventLink.length === 3) {
         $row += `<td class="hyperlink">
-                  <a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a> or 
-                  <a href="${eventLink[1]}"  target="_blank">${eventName[1]}</a> or 
+                  <a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a> or
+                  <a href="${eventLink[1]}"  target="_blank">${eventName[1]}</a> or
                   <a href="${eventLink[2]}"  target="_blank">${eventName[2]}</a>
                 </td>`;
       } else if (eventLink.length === 2) {
