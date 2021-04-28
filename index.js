@@ -94,7 +94,7 @@ async function initPointOfInterestInfo() {
 }
 
 // Makes deep copy of event to avoid editing dictionary
-function deepClone({ zone, eventDetails }) {
+function deepCloneEvent({ zone, eventDetails }) {
   const eventDetailsCopy = eventDetails.map(
     ({ eventType, eventName, eventLink }) => ({
       eventType,
@@ -103,6 +103,10 @@ function deepClone({ zone, eventDetails }) {
     })
   );
   return { zone, eventDetails: eventDetailsCopy };
+}
+
+function deepCloneItem({ eventType, eventName, eventLink }) {
+  return { eventType, eventName, eventLink: [...eventLink] };
 }
 
 function getWorld(location) {
@@ -178,7 +182,7 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in itemInfo)) {
           throw new Error("Invalid Item: " + eventInfo[1]);
         }
-        const itemEvent = deepClone(itemInfo[eventInfo[1]]);
+        const itemEvent = deepCloneItem(itemInfo[eventInfo[1]]);
 
         // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
         // At the moment, it does not seem possible to identify the drop of the red beetle
@@ -212,7 +216,10 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in bossInfo)) {
           throw new Error("Invalid Boss: " + eventInfo[1]);
         }
-        const bossEvent = { sort: 0, ...deepClone(bossInfo[eventInfo[1]]) };
+        const bossEvent = {
+          sort: 0,
+          ...deepCloneEvent(bossInfo[eventInfo[1]]),
+        };
         eventAccumulator.push(bossEvent);
         break;
       // A miniboss is a side dungeon with a fogged wall containing a boss like Gorefist, Raze, Canker, or The Warden
@@ -222,7 +229,7 @@ async function analyzeAdventure(fileText) {
         }
         const minibossEvent = {
           sort: 1,
-          ...deepClone(minibossInfo[eventInfo[1]]),
+          ...deepCloneEvent(minibossInfo[eventInfo[1]]),
         };
         eventAccumulator.push(minibossEvent);
         break;
@@ -233,7 +240,7 @@ async function analyzeAdventure(fileText) {
         }
         const dungeonEvent = {
           sort: 2,
-          ...deepClone(dungeonInfo[eventInfo[1]]),
+          ...deepCloneEvent(dungeonInfo[eventInfo[1]]),
         };
         eventAccumulator.push(dungeonEvent);
         break;
@@ -243,23 +250,30 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in siegeInfo)) {
           throw new Error("Invalid Siege: " + eventInfo[1]);
         }
-        const siegeEvent = { sort: 3, ...deepClone(siegeInfo[eventInfo[1]]) };
+        const siegeEvent = {
+          sort: 3,
+          ...deepCloneEvent(siegeInfo[eventInfo[1]]),
+        };
         eventAccumulator.push(siegeEvent);
         break;
       // A overworldpoi is a point of interest like Mud Tooth, the Monolith, the Abandoned Throne, the Flautist, and the Cryptolith
       // A point of interest is sometimes refered to as a world event
       case "overworldpoi":
-        // This is not finished it will be more descriptive later on
-        eventAccumulator.push({
-          zone: ["Overworld"],
-          order: 4,
-          eventDetails: [
-            {
-              eventType: "Point of Interest",
-              eventName: eventInfo[1].replace(/([A-Z])/g, " $1").trim(),
-            },
-          ],
-        });
+        if (!(eventInfo[1] in pointOfInterestInfo)) {
+          throw new Error("Invalid Point of Interest: " + eventInfo[1]);
+        }
+        if (eventInfo[1] === "Stuck Merchant") {
+          eventAccumulator.push({
+            sort: 4,
+            ...deepCloneEvent(dungeonInfo["GuardianShrine"]),
+          });
+        }
+        const pointOfInterestEvent = {
+          sort: 5,
+          ...deepCloneEvent(pointOfInterestInfo[eventInfo[1]]),
+        };
+        pointOfInterestEvent.zone.push("Overworld");
+        eventAccumulator.push(pointOfInterestEvent);
         break;
       // The cryptolith is a unique point of interest because it spawns the labyrinth that players can traverse to get the labyrinth armor set
       // This indicates that the labyrinth was spawned
