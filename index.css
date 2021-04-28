@@ -28,9 +28,31 @@ td {
   color: white;
 }
 
+a {
+  color: #58a6ff;
+}
+
+a:link {
+  /* color: #58a6ff; */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #58a6ff;
+  text-decoration: underline;
+}
+
+a:active {
+  color: blue;
+}
+
 .narrow {
   margin: 0 auto;
   max-width: 50%;
+}
+
+.hyperlink {
+  color: #58a6ff;
 }
 
 #world-input {

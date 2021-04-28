@@ -13,7 +13,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Hand Gun",
         "eventName": "Hunter's Hideout-Hunting Pistol",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Hideout",
@@ -36,7 +36,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Long Gun",
         "eventName": "Supply Run-Assault Rifle",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Supply+Run",
@@ -51,7 +51,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Head Armor",
         "eventName": "Showdown at Junk Town-Twisted Mask",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Showdown+at+Junk+Town",
@@ -66,7 +66,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Ring",
         "eventName": "Cult of the Root-Root Circlet",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Cult+of+the+Root",
@@ -74,7 +74,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Ring",
         "eventName": "Cult of the Root-Braided Thorns",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Cult+of+the+Root",
@@ -97,7 +97,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Armor Set",
         "eventName": "Armor Vault-Akari Armor Set",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Armor+vault+(Vault+of+The+Herald)",
@@ -112,7 +112,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Melee Weapon",
         "eventName": "The Clean Room-Wastelander Flail",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/The+Clean+Room",
@@ -127,7 +127,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Amulet",
         "eventName": "Fetid Pools-Heart of Darkness",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
@@ -135,7 +135,7 @@
         ]
       },
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Ring",
         "eventName": "Fetid Pools-Hero's Ring",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
@@ -181,7 +181,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Ungodly Boss",
+        "eventType": "Ungodly Boss/NPC",
         "eventName": "Iskal Queen",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Iskal+Queen+(Boss)"
@@ -195,7 +195,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Ring",
         "eventName": "Circlet Hatchery-Soul Ember",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Circlet+Hatchery",
@@ -210,7 +210,7 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Mini Boss",
+        "eventType": "Mini-Boss",
         "eventName": "Blink Thief",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/Blink+Thief"
@@ -238,11 +238,40 @@
     ],
     "eventDetails": [
       {
-        "eventType": "Quest Reward",
+        "eventType": "Quest Reward: Amulet",
         "eventName": "The Doe Shrine-Scavenger's Bauble",
         "eventLink": [
           "https://remnantfromtheashes.wiki.fextralife.com/The+Doe+Shrine",
           "https://remnantfromtheashes.wiki.fextralife.com/Scavenger's+Bauble"
+        ]
+      }
+    ]
+  },
+  "GuardianShrine": {
+    "zone": "Guardian Shrine",
+    "eventDetails": [
+      {
+        "eventType": "Mini-Boss",
+        "eventName": "Guardian Shrine-Root Horror",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Guardian+Shrine",
+          "https://remnantfromtheashes.wiki.fextralife.com/Root+Horror"
+        ]
+      },
+      {
+        "eventType": "Quest Reward: Head Armor",
+        "eventName": "Guardian Shrine-Radiant Visage",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Guardian+Shrine",
+          "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Visage"
+        ]
+      },
+      {
+        "eventType": "Quest Reward",
+        "eventName": "Guardian Shrine-Tome of Knowledge",
+        "eventLink": [
+          "https://remnantfromtheashes.wiki.fextralife.com/Guardian+Shrine",
+          "https://remnantfromtheashes.wiki.fextralife.com/Tome+of+Knowledge"
         ]
       }
     ]
