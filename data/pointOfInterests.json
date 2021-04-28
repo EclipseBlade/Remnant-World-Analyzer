@@ -1,281 +1,299 @@
 {
-    "Cryptolith": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest",
-                "eventName": [
-                    "Cryptolith"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Cryptolith+Sigil"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward: Armor Set",
-                "eventName": [
-                    "Labrynth Armor Set"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Labyrinth+Set"
-                ]
-            }
-        ]
-    },
-    "MudTooth": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest: Merchant",
-                "eventName": [
-                    "Mud Tooth"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Mud+Tooth"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward: Amulet",
-                "eventName": [
-                    "Pocket Watch"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Pocket+Watch"
-                ]
-            }
-        ]
-    },
-    "Settlement": {
-        "zone": [],
-        "eventDetails": []
-    },
-    "WailingWood": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest",
-                "eventName": [
-                    "Wailing Tree"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Wailing+Tree"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward: Amulet",
-                "eventName": [
-                    "Twisted Idol"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Twisted+Idol"
-                ]
-            }
-        ]
-    },
-    "Monolith": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest",
-                "eventName": [
-                    "Monolith"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Monolith"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward: Armor Set",
-                "eventName": [
-                    "Void Armor Set"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Void+Set"
-                ]
-            }
-        ]
-    },
-    "OldManAndConstruct": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest: Merchant and Mini-Boss",
-                "eventName": [
-                    "Wud-Ancient Construct"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Wud",
-                    "https://remnantfromtheashes.wiki.fextralife.com/Ancient+Construct"
-                ]
-            },
-            {
-                "eventType": "Sold Item: Ring",
-                "eventName": [
-                    "Jewel of the Black Sun"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Jewel+of+the+Black+Sun"
-                ]
-            },
-            {
-                "eventType": "Sold Item: Amulet",
-                "eventName": [
-                    "Mender's Charm"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Mender's+Charm"
-                ]
-            },
-            {
-                "eventType": "Sold Items: Armor Set",
-                "eventName": [
-                    "Osseous Armor Set"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Ossesus+Set"
-                ]
-            }
-        ]
-    },
-    "AbandonedThrone": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest",
-                "eventName": [
-                    "Abandoned Throne"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Abandoned+Throne"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward: Key Item",
-                "eventName": [
-                    "Opalescent Shell"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Opalescent+Shell"
-                ]
-            }
-        ]
-    },
-    "GraveyardElf": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest: Merchant",
-                "eventName": [
-                    "Graveyard Elf"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Graveyard+Elf"
-                ]
-            },
-            {
-                "eventType": "Sold Item: Ring",
-                "eventName": [
-                    "Grim Coil"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Grim+Coil"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward",
-                "eventName": [
-                    "Ring of the Unclean"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+the+Unclean"
-                ]
-            }
-        ]
-    },
-    "Flautist": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest: NPC",
-                "eventName": [
-                    "Flautist"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Flautist"
-                ]
-            },
-            {
-                "eventType": "Point of Interest: Reward",
-                "eventName": [
-                    "Heart of the Wolf"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Heart+of+the+Wolf"
-                ]
-            }
-        ]
-    },
-    "Ruins": {
-        "zone": [],
-        "eventDetails": []
-    },
-    "StuckMerchant": {
-        "zone": [],
-        "eventDetails": [
-            {
-                "eventType": "Point of Interest: Merchant",
-                "eventName": [
-                    "Stuck Merchant"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Stuck+Merchant"
-                ]
-            },
-            {
-                "eventType": "Sold Item: Melee Weapon",
-                "eventName": [
-                    "Spear"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Stuck+Merchant"
-                ]
-            },
-            {
-                "eventType": "Sold Item: Leg Armor",
-                "eventName": [
-                    "Radiant Greaves"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Greaves"
-                ]
-            },
-            {
-                "eventType": "Sold Item: Body Armor",
-                "eventName": [
-                    "Radiant Protector"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Protector"
-                ]
-            },
-            {
-                "eventType": "Point of Interest: Key Item",
-                "eventName": [
-                    "Strange Curio"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Strange+Curio"
-                ]
-            },
-            {
-                "eventType": "Point of Interest Reward: Ring",
-                "eventName": [
-                    "Guardian Ring"
-                ],
-                "eventLink": [
-                    "https://remnantfromtheashes.wiki.fextralife.com/Guardian's+Ring"
-                ]
-            }
-        ]
-    }
+    "Cryptolith": [
+        {
+            "eventType": "Point of Interest",
+            "eventName": [
+                "Cryptolith"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Cryptolith+Sigil"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Armor Set",
+            "eventName": [
+                "Labrynth Armor Set"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Labyrinth+Set"
+            ]
+        }
+    ],
+    "MudTooth": [
+        {
+            "eventType": "Point of Interest: Merchant",
+            "eventName": [
+                "Mud Tooth"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Mud+Tooth"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Amulet",
+            "eventName": [
+                "Pocket Watch"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Pocket+Watch"
+            ]
+        }
+    ],
+    "Settlement": [],
+    "WailingWood": [
+        {
+            "eventType": "Point of Interest",
+            "eventName": [
+                "Wailing Tree"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Wailing+Tree"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Amulet",
+            "eventName": [
+                "Twisted Idol"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Twisted+Idol"
+            ]
+        }
+    ],
+    "Monolith": [
+        {
+            "eventType": "Point of Interest",
+            "eventName": [
+                "Monolith"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Monolith"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Armor Set",
+            "eventName": [
+                "Void Armor Set"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Void+Set"
+            ]
+        }
+    ],
+    "OldManAndConstruct": [
+        {
+            "eventType": "Point of Interest: Merchant and Mini-Boss",
+            "eventName": [
+                "Wud",
+                "Ancient Construct"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Wud",
+                "https://remnantfromtheashes.wiki.fextralife.com/Ancient+Construct"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Ring",
+            "eventName": [
+                "Jewel of the Black Sun"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Jewel+of+the+Black+Sun"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Amulet",
+            "eventName": [
+                "Mender's Charm"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Mender's+Charm"
+            ]
+        },
+        {
+            "eventType": "Sold Items: Armor Set",
+            "eventName": [
+                "Osseous Armor Set"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Ossesus+Set"
+            ]
+        }
+    ],
+    "AbandonedThrone": [
+        {
+            "eventType": "Point of Interest",
+            "eventName": [
+                "Abandoned Throne"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Abandoned+Throne"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Key Item",
+            "eventName": [
+                "Opalescent Shell"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Opalescent+Shell"
+            ]
+        }
+    ],
+    "GraveyardElf": [
+        {
+            "eventType": "Point of Interest: Merchant",
+            "eventName": [
+                "Graveyard Elf"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Graveyard+Elf"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Ring",
+            "eventName": [
+                "Grim Coil"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Grim+Coil"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward",
+            "eventName": [
+                "Ring of the Unclean"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+the+Unclean"
+            ]
+        }
+    ],
+    "Flautist": [
+        {
+            "eventType": "Point of Interest: NPC",
+            "eventName": [
+                "Flautist"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Flautist"
+            ]
+        },
+        {
+            "eventType": "Point of Interest: Reward",
+            "eventName": [
+                "Heart of the Wolf"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Heart+of+the+Wolf"
+            ]
+        }
+    ],
+    "Ruins": [],
+    "StuckMerchant": [
+        {
+            "eventType": "Point of Interest: Merchant",
+            "eventName": [
+                "Stuck Merchant"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Stuck+Merchant"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Melee Weapon",
+            "eventName": [
+                "Spear"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Stuck+Merchant"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Leg Armor",
+            "eventName": [
+                "Radiant Greaves"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Greaves"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Body Armor",
+            "eventName": [
+                "Radiant Protector"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Protector"
+            ]
+        },
+        {
+            "eventType": "Point of Interest: Key Item",
+            "eventName": [
+                "Strange Curio"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Strange+Curio"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Ring",
+            "eventName": [
+                "Guardian Ring"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Guardian's+Ring"
+            ]
+        }
+    ],
+    "Snow Ruins": [],
+    "VargylBones": [
+        {
+            "eventType": "Point of Interest",
+            "eventName": [
+                "Felmourn Burrow"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Felmourn+Burrow"
+            ]
+        },
+        {
+            "eventType": "Point of Interest Reward: Melee Weapon",
+            "eventName": [
+                "Frostborne"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Frostborne"
+            ]
+        }
+    ],
+    "Afterbirth": [
+        {
+            "eventType": "Point of Interest: Merchant",
+            "eventName": [
+                "Krall Mother"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Krall+Mother"
+            ]
+        },
+        {
+            "eventType": "Sold Item: Ring",
+            "eventName": [
+                "Scavenger's Ring"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Scavenger's+Ring"
+            ]
+        },
+        {
+            "eventType": "Quest Reward: Amulet",
+            "eventName": [
+                "Blessed Necklace"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Blessed+Necklace"
+            ]
+        }
+    ]
 }

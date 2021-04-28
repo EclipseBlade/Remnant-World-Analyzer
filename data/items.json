@@ -459,5 +459,32 @@
         "eventLink": [
             "https://remnantfromtheashes.wiki.fextralife.com/Vengeance+Idol"
         ]
+    },
+    "Packmaster": {
+        "eventType": "Key Item",
+        "eventName": [
+            "Packmaster's Tusk"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Master's+Tusk"
+        ]
+    },
+    "CreepersPeepers": {
+        "eventType": "Unknown",
+        "eventName": [
+            "Creepers Peepers Statue"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers"
+        ]
+    },
+    "KrallBaby": {
+        "eventType": "Unknown",
+        "eventName": [
+            "Krall Baby"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Krall+Mother"
+        ]
     }
 }
