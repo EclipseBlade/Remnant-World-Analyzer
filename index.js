@@ -1,6 +1,6 @@
 // After adventure mode is complete the website will display minified versions of the html, css, javascript, and jsons
 // TODO Reisum
-// TODO review areas for extra items (Root Nexus)
+// TODO review areas for extra items (Root Nexus), Control Rod
 // Review Item Events (Root Nexus)
 
 let itemInfo = null;
@@ -327,7 +327,7 @@ async function analyzeAdventure(fileText) {
 // It would be faster to do display the content in the analyzeMode's switch statement but it would also be harder to read and debug
 function renderTable({ world, worldEvents }) {
   $("#world-info").empty();
-  for (const { zone, eventDetails } of worldEvents) {
+  for (const { zone, eventDetails, eventLink } of worldEvents) {
     let subAreaEvents = 0;
     if (zone.length == 2) {
       if (zone[0] === "Strange Pass") {
@@ -343,23 +343,25 @@ function renderTable({ world, worldEvents }) {
         $row += `(${zone[1]})`;
       }
       $row += `</td><td>${eventType}</td>`;
-      if (eventDetails[i].eventLink) {
-        const eventLink = eventDetails[i].eventLink;
-        if (eventLink.length === 2) {
-          const eventNames = eventName.split("-");
-          $row += `<td class="hyperlink"><a href="${eventLink[0]}"  target="_blank">${eventNames[0]}</a>`;
-          if (eventNames[1] === "Maul" || eventNames[1] === "Wud") {
-            $row += " and ";
-          } else {
-            $row += ": ";
-          }
-          $row += `<a href="${eventLink[1]}"  target="_blank">${eventNames[1]}</a></td>`;
+
+      if (eventLink.length === 3) {
+        $row += `<td class="hyperlink">
+                  <a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a> or 
+                  <a href="${eventLink[1]}"  target="_blank">${eventName[1]}</a> or 
+                  <a href="${eventLink[2]}"  target="_blank">${eventName[2]}</a>
+                </td>`;
+      } else if (eventLink.length === 2) {
+        $row += `<td class="hyperlink"><a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a>`;
+        if (eventName[1] === "Maul" || eventName[1] === "Wud") {
+          $row += " and ";
         } else {
-          $row += `<td><a href="${eventLink[0]}"  target="_blank">${eventName}</a></td>`;
+          $row += ": ";
         }
+        $row += `<a href="${eventLink[1]}"  target="_blank">${eventName[1]}</a></td>`;
       } else {
-        $row += `<td><a>${eventName}</a></td>`;
+        $row += `<td><a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a></td>`;
       }
+
       $row += "</tr>";
       $("#world-info").append($row);
     }
@@ -425,17 +427,3 @@ $("#world-input").submit(async (event) => {
 // "Swamp Overworld Zone2": "TheMistFen"
 // "Snow Overworld Zone1": "DrolniirWoods"
 // "Snow Overworld Zone2": "DeepfrostExpanse"
-
-// Double checked location and events with remnantfromtheashes.wiki.fextralife.com
-
-//  Reisum
-// UrikkiBlademasters: "ValenhagMines",
-// ShieldWarden: "Exiles'sTrench",
-// BlizzardMage: "WutheringKeep",
-// TheJackal: "WildReach",
-// WarningTotems: "Magir'sDirge",
-// ShamanFlames: "GraveOfTheElders",
-// RatRider: "CrimsonHold",
-// FrozenLords: "Judgement'sSpear",
-// IceSkimmer: "TheFrieranSea",
-// CreepersPeeper: "Watcher'sHollow"
