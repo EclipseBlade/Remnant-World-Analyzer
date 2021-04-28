@@ -105,7 +105,7 @@ function deepCloneEvent({ zone, eventDetails }) {
   return { zone, eventDetails: eventDetailsCopy };
 }
 
-function E({ eventType, eventName, eventLink }) {
+function deepCloneSubEvent({ eventType, eventName, eventLink }) {
   return { eventType, eventName: [...eventName], eventLink: [...eventLink] };
 }
 
@@ -179,7 +179,6 @@ async function analyzeAdventure(fileText) {
   // Reads a single event from advText, paired with reduce function
   const readEventReducer = (eventAccumulator, eventText) => {
     const eventInfo = eventText.split(/\/Quest_/)[1].split(/_/);
-    // console.log(eventInfo);
 
     // The event text must be switched to lowercase because sometimes the save file uses capitalizes words other times it doesn't like MiniBoss/miniboss or OverWorldPOI/OverworldPOI
     switch (eventInfo[0].toLowerCase()) {
@@ -188,7 +187,7 @@ async function analyzeAdventure(fileText) {
         if (!(eventInfo[1] in itemInfo)) {
           throw new Error("Invalid Item: " + eventInfo[1]);
         }
-        const itemEvent = E(itemInfo[eventInfo[1]]);
+        const itemEvent = deepCloneSubEvent(itemInfo[eventInfo[1]]);
 
         // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
         // At the moment, it does not seem possible to identify the drop of the red beetle
@@ -274,7 +273,7 @@ async function analyzeAdventure(fileText) {
             ...deepCloneEvent(dungeonInfo["GuardianShrine"]),
           });
         }
-        for (overworldEvent of pointOfInterestInfo[eventInfo[1]]) {
+        for (const overworldEvent of pointOfInterestInfo[eventInfo[1]]) {
           overworldZone.eventDetails.push(deepCloneSubEvent(overworldEvent));
         }
         eventAccumulator.push(overworldZone);
@@ -402,7 +401,7 @@ $("#world-input").submit(async (event) => {
         renderTable(worldAnalysis);
       }
     } catch (error) {
-      if (error instanceof ConnectionwError) {
+      if (error instanceof ConnectionError) {
         $("#connection-error").show();
       } else {
         $("#form-file").addClass("is-invalid");
