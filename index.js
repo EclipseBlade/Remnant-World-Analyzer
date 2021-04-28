@@ -1,5 +1,4 @@
 // After adventure mode is complete the website will display minified versions of the html, css, javascript, and jsons
-// TODO Reisum
 // TODO review areas for extra items (Root Nexus), Control Rod
 // Review Item Events (Root Nexus)
 
@@ -179,6 +178,7 @@ async function analyzeAdventure(fileText) {
   // Reads a single event from advText, paired with reduce function
   const readEventReducer = (eventAccumulator, eventText) => {
     const eventInfo = eventText.split(/\/Quest_/)[1].split(/_/);
+    // console.log(eventInfo);
 
     // The event text must be switched to lowercase because sometimes the save file uses capitalizes words other times it doesn't like MiniBoss/miniboss or OverWorldPOI/OverworldPOI
     switch (eventInfo[0].toLowerCase()) {
@@ -191,7 +191,7 @@ async function analyzeAdventure(fileText) {
 
         // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
         // At the moment, it does not seem possible to identify the drop of the red beetle
-        if (itemEvent.eventType === "Sketterling Temple") {
+        if (eventInfo[1] === "Sketterling") {
           let beetleIndex = -1;
           // Mar'Gosh's Lair means that a second Sketterling can spawn so we have to check for the spawns seperately
           // This will break on more than 2 sketters (Not Sure If Possible)
@@ -212,9 +212,16 @@ async function analyzeAdventure(fileText) {
             (fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red") +
             itemEvent.eventName[0];
         }
-        eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
-          itemEvent
-        );
+        if (
+          eventInfo[1] === "CreepersPeepers" ||
+          eventInfo[1] === "Packmaster"
+        ) {
+          overworldZone.eventDetails.push(itemEvent);
+        } else {
+          eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
+            itemEvent
+          );
+        }
         break;
       // A boss is the world boss like Singe, Claviger, Ixiillis, or The Ravager
       case "boss":
@@ -273,9 +280,9 @@ async function analyzeAdventure(fileText) {
             ...deepCloneEvent(dungeonInfo["GuardianShrine"]),
           });
         }
-        for (const overworldEvent of pointOfInterestInfo[eventInfo[1]]) {
-          overworldZone.eventDetails.push(deepCloneSubEvent(overworldEvent));
-        }
+        overworldZone.eventDetails = pointOfInterestInfo[eventInfo[1]]
+          .map((overworldEvent) => deepCloneSubEvent(overworldEvent))
+          .concat(overworldZone.eventDetails);
         eventAccumulator.push(overworldZone);
         break;
       // The cryptolith is a unique point of interest because it spawns the labyrinth that players can traverse to get the labyrinth armor set
