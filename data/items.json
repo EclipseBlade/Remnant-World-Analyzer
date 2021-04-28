@@ -460,6 +460,16 @@
             "https://remnantfromtheashes.wiki.fextralife.com/Vengeance+Idol"
         ]
     },
+    "CreepersPeepers": {
+        "eventType": "Quest Reward: Hand Gun",
+        "eventName": [
+            "Creepers Peepers: Twin Shot"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers",
+            "https://remnantfromtheashes.wiki.fextralife.com/Twin+Shot"
+        ]
+    },
     "Packmaster": {
         "eventType": "Key Item",
         "eventName": [
@@ -469,13 +479,67 @@
             "https://remnantfromtheashes.wiki.fextralife.com/Master's+Tusk"
         ]
     },
-    "CreepersPeepers": {
-        "eventType": "Unknown",
+    "BurdenOfTheWarlord": {
+        "eventType": "Item Drop: Ring",
         "eventName": [
-            "Creepers Peepers Statue"
+            "Burden of the Warlord"
         ],
         "eventLink": [
-            "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers"
+            "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Warlord"
+        ]
+    },
+    "SerpentsFang": {
+        "eventType": "Item Drop: Ring",
+        "eventName": [
+            "Serpent's Fang"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Serpent's+Fang"
+        ]
+    },
+    "VolatileGem": {
+        "eventType": "Item Drop: Ring",
+        "eventName": [
+            "Volatile Gem"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Volatile+Gem"
+        ]
+    },
+    "Charcoal Necklace": {
+        "eventType": "Item Drop: Amulet",
+        "eventName": [
+            "Charcoal Necklace"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Charcoal+Necklace"
+        ]
+    },
+    "Driftstone": {
+        "eventType": "Item Drop: Amulet",
+        "eventName": [
+            "Driftstone"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Driftstone"
+        ]
+    },
+    "PolishedWhetstone": {
+        "eventType": "Item Drop: Amulet",
+        "eventName": [
+            "Polished Whetstone"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Polished+Whetstone"
+        ]
+    },
+    "RazorwireNecklace": {
+        "eventType": "Item Drop: Amulet",
+        "eventName": [
+            "Razorwire Necklace"
+        ],
+        "eventLink": [
+            "https://remnantfromtheashes.wiki.fextralife.com/Razorwire+Necklace"
         ]
     },
     "KrallBaby": {
