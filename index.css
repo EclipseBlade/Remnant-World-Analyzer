@@ -51,6 +51,11 @@ a:active {
   max-width: 50%;
 }
 
+table {
+  margin: 0 auto;
+  max-width: 55%;
+}
+
 .hyperlink {
   color: #58a6ff;
 }
