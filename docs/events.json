@@ -1,0 +1,2010 @@
+{
+    "bosses": {
+        "RootDragon": {
+            "zone": [
+                "The Ash Yard"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "Singe"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Singe"
+                    ]
+                }
+            ]
+        },
+        "RootEnt": {
+            "zone": [
+                "The Choking Hollow"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "The Ent"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Ent"
+                    ]
+                }
+            ]
+        },
+        "TheHarrow": {
+            "zone": [
+                "The Bunker"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "The Harrow"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Harrow"
+                    ]
+                }
+            ]
+        },
+        "WastelandGuardian": {
+            "zone": [
+                "The Spindle"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "Claviger"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Claviger"
+                    ]
+                }
+            ]
+        },
+        "Fatty": {
+            "zone": [
+                "The Shack"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "The Unclean One"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Unclean+One"
+                    ]
+                }
+            ]
+        },
+        "SwampGuardian": {
+            "zone": [
+                "The Grotto"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "Ixillis"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Ixillis"
+                    ]
+                }
+            ]
+        },
+        "TotemFather": {
+            "zone": [
+                "The Scalding Glade"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "Totem Father"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Totem+Father"
+                    ]
+                }
+            ]
+        },
+        "Wolf": {
+            "zone": [
+                "Ravager's Haunt"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "The Ravager"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Ravager+Shrine"
+                    ]
+                }
+            ]
+        },
+        "RatRider": {
+            "zone": [
+                "Crimson Hold"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "World Boss",
+                    "eventName": [
+                        "Brudvaak, the Rider and Vargr"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Brudvaak,+the+Rider+and+Vargr,+the+Warg"
+                    ]
+                }
+            ]
+        }
+    },
+    "minibosses": {
+        "Brabus": {
+            "zone": [
+                "Cutthroat Channel",
+                "The Depot"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Brabus"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Brabus"
+                    ]
+                }
+            ]
+        },
+        "RootBrute": {
+            "zone": [
+                "Sunken Passage",
+                "The Grinder"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Gorefist"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Gorefist"
+                    ]
+                }
+            ]
+        },
+        "RootTumbleweed": {
+            "zone": [
+                "The Tangled Pass",
+                "The Artery"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "The Mangler"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Mangler"
+                    ]
+                }
+            ]
+        },
+        "RootWraith": {
+            "zone": [
+                "The Hidden Sanctum",
+                "The Tainted Well"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Shroud"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Shroud"
+                    ]
+                }
+            ]
+        },
+        "Splitter": {
+            "zone": [
+                "Leto's Lab",
+                "The Cursed Station"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Riphide"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Riphide"
+                    ]
+                },
+                {
+                    "eventType": "Item Drop: Armor Set",
+                    "eventName": [
+                        "Leto's Armor Set"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Leto's+Set"
+                    ]
+                }
+            ]
+        },
+        "HoundMaster": {
+            "zone": [
+                "The Burrow",
+                "Stalker's Den"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Merchant/Mini-Boss and Dungeon Boss",
+                    "eventName": [
+                        "Houndmaster",
+                        "Maul"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Houndmaster",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Maul"
+                    ]
+                }
+            ]
+        },
+        "Sentinel": {
+            "zone": [
+                "Shackled Canyon",
+                "Lair of the Eyeless"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Raze"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Raze"
+                    ]
+                }
+            ]
+        },
+        "SwarmMaster": {
+            "zone": [
+                "The Iron Rift",
+                "The Hive"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Scourge"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Scourge"
+                    ]
+                }
+            ]
+        },
+        "Vyr": {
+            "zone": [
+                "The Ardent Temple",
+                "Hall of the Faithful"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Shade and Shatter"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Shade+and+Shatter"
+                    ]
+                }
+            ]
+        },
+        "BarbTerror": {
+            "zone": [
+                "Needle Lair",
+                "Throne of Barbs"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Barbed Terror"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Barbed+Terror"
+                    ]
+                }
+            ]
+        },
+        "FlickeringHorror": {
+            "zone": [
+                "Hall of Whispers",
+                "Corrupted Sanctum"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Dream Eater"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Dream+Eater"
+                    ]
+                }
+            ]
+        },
+        "SlimeHulk": {
+            "zone": [
+                "The Drowned Trench",
+                "Mire Hollow"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Canker"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Canker"
+                    ]
+                }
+            ]
+        },
+        "Tyrant": {
+            "zone": [
+                "The Capillary",
+                "Musk Forge"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "The Thrall"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Thrall"
+                    ]
+                }
+            ]
+        },
+        "KinCaller": {
+            "zone": [
+                "The Hall of Judgement",
+                "The Ring of Trials"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "The Warden"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Warden"
+                    ]
+                }
+            ]
+        },
+        "BlinkFiend": {
+            "zone": [
+                "Widow's Pass",
+                "Noble's Rest"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Onslaught"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Onslaught"
+                    ]
+                }
+            ]
+        },
+        "StormCaller": {
+            "zone": [
+                "Heretic's Nest",
+                "Matyr's Garden"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Stormcaller"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Stormcaller"
+                    ]
+                }
+            ]
+        },
+        "ImmolatorAndZephyr": {
+            "zone": [
+                "Withering Village",
+                "Warden's Pulpit"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Sear and Scald"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Scald+and+Sear"
+                    ]
+                }
+            ]
+        },
+        "BlizzardMage": {
+            "zone": [
+                "Wuthering Keep",
+                "The Sundered Court "
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Ikro, the Ice Conjurer"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Ikro,+the+Ice+Conjurer"
+                    ]
+                }
+            ]
+        },
+        "ShieldWarden": {
+            "zone": [
+                "Exiles's Trench",
+                "The Wardens Prison"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Obryk, the Shield Warden"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Obryk,+the+Shield+Warden"
+                    ]
+                }
+            ]
+        },
+        "TheJackal": {
+            "zone": [
+                "Wild Reach",
+                "Den of the Jackal"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Erfor the Jackal"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Erfor,+the+Jackal"
+                    ]
+                }
+            ]
+        },
+        "UrikkiBlademasters": {
+            "zone": [
+                "Valenhag Mines",
+                "Chasmic Vent"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Dungeon Boss",
+                    "eventName": [
+                        "Tian, the Assassin"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Tian,+the+Assassin"
+                    ]
+                }
+            ]
+        }
+    },
+    "dungeons": {
+        "HuntersHideout": {
+            "zone": [
+                "Hidden Grotto"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Key Item",
+                    "eventName": [
+                        "Hunter's Hideout",
+                        "Hunter's Key"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Hideout",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Key"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Hand Gun",
+                    "eventName": [
+                        "Hunter's Hideout",
+                        "Hunting Pistol"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Hideout",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Hunting+Pistol"
+                    ]
+                }
+            ]
+        },
+        "LastWill": {
+            "zone": [
+                "Sorrow's Field"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Item Drop: Key Item",
+                    "eventName": [
+                        "Supply Run",
+                        "Monkey Key"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Supply+Run",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Monkey+Key"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Long Gun",
+                    "eventName": [
+                        "Supply Run",
+                        "Assault Rifle"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Supply+Run",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Assault+Rifle"
+                    ]
+                }
+            ]
+        },
+        "MadMerchant": {
+            "zone": [
+                "Junktown"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Head Armor",
+                    "eventName": [
+                        "Showdown at Junk Town",
+                        "Twisted Mask"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Showdown+at+Junk+Town",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Twisted+Mask"
+                    ]
+                }
+            ]
+        },
+        "RootCultist": {
+            "zone": [
+                "Marrow Pass"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Cult of the Root",
+                        "Root Circlet"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Cult+of+the+Root",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Root+Circlet"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Cult of the Root",
+                        "Braided Thorns"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Cult+of+the+Root",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Braided+Thorns"
+                    ]
+                }
+            ]
+        },
+        "ArmorVault": {
+            "zone": [
+                "Vault of the Heralds"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Item Drop: Key Item",
+                    "eventName": [
+                        "Armor Vault",
+                        "Glowing Rod"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Armor+vault+(Vault+of+The+Herald)",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Glowing+Rod"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Armor Set",
+                    "eventName": [
+                        "Armor Vault",
+                        "Akari Armor Set"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Armor+vault+(Vault+of+The+Herald)",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Akari+Set"
+                    ]
+                }
+            ]
+        },
+        "TheCleanRoom": {
+            "zone": [
+                "The Purge Hall"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Melee Weapon",
+                    "eventName": [
+                        "The Clean Room",
+                        "Wastelander Flail"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Clean+Room",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Wastelander+Flail"
+                    ]
+                }
+            ]
+        },
+        "FetidPool": {
+            "zone": [
+                "Fetid Pools"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Amulet",
+                    "eventName": [
+                        "Fetid Pools",
+                        "Heart of Darkness"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Heart+of+Darkness"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Fetid Pools",
+                        "Hero's Ring"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Hero's+Ring"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward",
+                    "eventName": [
+                        "Fetid Pools",
+                        "2 Simulacrum"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Simulacrum"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward",
+                    "eventName": [
+                        "Fetid Pools",
+                        "Simulacrum"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Simulacrum"
+                    ]
+                },
+                {
+                    "eventType": "Item Drop: Amulet",
+                    "eventName": [
+                        "Fetid Pools",
+                        "Rusted Amulet"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Fetid+Pools",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Rusted+Amulet"
+                    ]
+                },
+                {
+                    "eventType": "Item Drop",
+                    "eventName": [
+                        "Tome of Knowledge"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Tome+of+Knowledge"
+                    ]
+                }
+            ]
+        },
+        "QueensTemple": {
+            "zone": [
+                "Iskal Sanctum"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Ungodly Boss/Merchant",
+                    "eventName": [
+                        "Iskal Queen"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Iskal+Queen+(Boss)"
+                    ]
+                }
+            ]
+        },
+        "Wisp": {
+            "zone": [
+                "Circlet Hatchery"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Circlet Hatchery",
+                        "Soul Ember"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Circlet+Hatchery",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Soul+Ember"
+                    ]
+                }
+            ]
+        },
+        "BlinkThief": {
+            "zone": [
+                "The Verdant Strand"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Mini-Boss",
+                    "eventName": [
+                        "Blink Thief"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Blink+Thief"
+                    ]
+                },
+                {
+                    "eventType": "Item Drop: Long Gun",
+                    "eventName": [
+                        "Ricochet Rifle"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Ricochet+Rifle"
+                    ]
+                },
+                {
+                    "eventType": "Item Drop: Ring",
+                    "eventName": [
+                        "Celerity Stone"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Celerity+Stone"
+                    ]
+                }
+            ]
+        },
+        "DoeShrine": {
+            "zone": [
+                "Widow's Vestry"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Amulet",
+                    "eventName": [
+                        "The Doe Shrine",
+                        "Scavenger's Bauble"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Doe+Shrine",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Scavenger's+Bauble"
+                    ]
+                }
+            ]
+        },
+        "GuardianShrine": {
+            "zone": [
+                "Guardian Shrine"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Mini-Boss",
+                    "eventName": [
+                        "Guardian Shrine",
+                        "Root Horror"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Guardian+Shrine",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Root+Horror"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Head Armor",
+                    "eventName": [
+                        "Guardian Shrine",
+                        "Radiant Visage"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Guardian+Shrine",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Visage"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward",
+                    "eventName": [
+                        "Guardian Shrine",
+                        "Tome of Knowledge"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Guardian+Shrine",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Tome+of+Knowledge"
+                    ]
+                }
+            ]
+        },
+        "CreepersPeeper": {
+            "zone": [
+                "Watcher's Hollow"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Item Drop: Key Item",
+                    "eventName": [
+                        "Creeper's Peepers",
+                        "Servant Cage Key"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Servant+Cage+Key"
+                    ]
+                },
+                {
+                    "eventType": "Key Item",
+                    "eventName": [
+                        "Creeper's Peepers",
+                        "Creeper's Peeper"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peeper"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Creeper's Peepers",
+                        "Swashbuckler's Signet"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Swashbuckler's+Signet"
+                    ]
+                }
+            ]
+        },
+        "FrozenLords": {
+            "zone": [
+                "Judgement's Spear"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Armor Set",
+                    "eventName": [
+                        "Magir Test",
+                        "Scavenger Armor Set"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Magir+Test",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Scavenger's+Set"
+                    ]
+                }
+            ]
+        },
+        "IceSkimmer": {
+            "zone": [
+                "The Frieran Sea"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Merchant",
+                    "eventName": [
+                        "Sebum"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Sebum"
+                    ]
+                },
+                {
+                    "eventType": "Sold Item: Hand Gun",
+                    "eventName": [
+                        "Sawed-Off"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Sawed-Off"
+                    ]
+                },
+                {
+                    "eventType": "Sold Item: Ring",
+                    "eventName": [
+                        "Band of Discord"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Discord"
+                    ]
+                },
+                {
+                    "eventType": "Sold Item: Ring",
+                    "eventName": [
+                        "Ring of Synergy"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Synergy"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Armor Set",
+                    "eventName": [
+                        "Warlord's Armor Set"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Warlord's+Set"
+                    ]
+                }
+            ]
+        },
+        "WarningTotems": {
+            "zone": [
+                "Magir's Dirge"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Ring or Amulet",
+                    "eventName": [
+                        "Evoker's Seal",
+                        "Juggernaut Band",
+                        "Vulcan's Detonator"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Evoker's+Seal",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Juggernaut+Band",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Vulcan's+Detonator"
+                    ]
+                }
+            ]
+        }
+    },
+    "sieges": {
+        "LizAndLiz": {
+            "zone": [
+                "The Warren",
+                "Land's End"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Key Item",
+                    "eventName": [
+                        "A Tale of Two Liz's",
+                        "Liz's Key"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/A+Tale+of+Two+Liz%27s",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Liz's+Key"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Long Gun",
+                    "eventName": [
+                        "A Tale of Two Liz's",
+                        "Chicago Typewriter"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/A+Tale+of+Two+Liz%27s",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Chicago+Typewriter"
+                    ]
+                }
+            ]
+        },
+        "RootShrine": {
+            "zone": [
+                "The Gallows"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Armor Set",
+                    "eventName": [
+                        "The Root Shrine",
+                        "Twisted Armor Set"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Root+Shrine",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Twisted+Set"
+                    ]
+                }
+            ]
+        },
+        "TheLostGantry": {
+            "zone": [
+                "Concourse of the Sun",
+                "The Lost Gantry"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Long Gun",
+                    "eventName": [
+                        "The Lost Gantry",
+                        "Beam Rifle"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Lost+Gantry",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Beam+Rifle"
+                    ]
+                }
+            ]
+        },
+        "BrainBug": {
+            "zone": [
+                "Strange Pass",
+                "Margosh's Lair"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Mini-Boss/Merchant",
+                    "eventName": [
+                        "Brain Bug",
+                        "Mar'Gosh"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Brain+Bug",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Mar'Gosh"
+                    ]
+                },
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Brain Bug",
+                        "Gift of the Iskal"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Brain+Bug",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Gift+of+the+Iskal"
+                    ]
+                }
+            ]
+        },
+        "TheRisen": {
+            "zone": [
+                "Ahanae's Lament",
+                "The Radiant Tomb"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Amulet",
+                    "eventName": [
+                        "The Risen",
+                        "Soul Anchor"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Risen",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Soul+Anchor"
+                    ]
+                }
+            ]
+        },
+        "WolfShrine": {
+            "zone": [
+                "Temple of the Ravager",
+                "Martyr's Sanctuary"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Armor Set",
+                    "eventName": [
+                        "The Ravager Shrine",
+                        "Elder Armor Set"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/The+Ravager+Shrine",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Elder+Set"
+                    ]
+                }
+            ]
+        },
+        "ShamanFlames": {
+            "zone": [
+                "Grave of the Elders",
+                "Unknown"
+            ],
+            "eventDetails": [
+                {
+                    "eventType": "Quest Reward: Ring",
+                    "eventName": [
+                        "Grave Siege",
+                        "Prismatic Diamond Ring"
+                    ],
+                    "eventLink": [
+                        "https://remnantfromtheashes.wiki.fextralife.com/Grave+Siege",
+                        "https://remnantfromtheashes.wiki.fextralife.com/Prismatic+Diamond+Ring"
+                    ]
+                }
+            ]
+        }
+    },
+    "pointOfInterests": {
+        "Cryptolith": [
+            {
+                "eventType": "Point of Interest",
+                "eventName": [
+                    "Cryptolith"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Cryptolith+Sigil"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Armor Set",
+                "eventName": [
+                    "Labrynth Armor Set"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Labyrinth+Set"
+                ]
+            }
+        ],
+        "MudTooth": [
+            {
+                "eventType": "Point of Interest: Merchant",
+                "eventName": [
+                    "Mud Tooth"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Mud+Tooth"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Amulet",
+                "eventName": [
+                    "Pocket Watch"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Pocket+Watch"
+                ]
+            }
+        ],
+        "Settlement": [],
+        "WailingWood": [
+            {
+                "eventType": "Point of Interest",
+                "eventName": [
+                    "Wailing Tree"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Wailing+Tree"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Amulet",
+                "eventName": [
+                    "Twisted Idol"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Twisted+Idol"
+                ]
+            }
+        ],
+        "Monolith": [
+            {
+                "eventType": "Point of Interest",
+                "eventName": [
+                    "Monolith"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Monolith"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Armor Set",
+                "eventName": [
+                    "Void Armor Set"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Void+Set"
+                ]
+            }
+        ],
+        "OldManAndConstruct": [
+            {
+                "eventType": "Point of Interest: Merchant and Mini-Boss",
+                "eventName": [
+                    "Wud",
+                    "Ancient Construct"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Wud",
+                    "https://remnantfromtheashes.wiki.fextralife.com/Ancient+Construct"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Ring",
+                "eventName": [
+                    "Jewel of the Black Sun"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Jewel+of+the+Black+Sun"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Amulet",
+                "eventName": [
+                    "Mender's Charm"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Mender's+Charm"
+                ]
+            },
+            {
+                "eventType": "Sold Items: Armor Set",
+                "eventName": [
+                    "Osseous Armor Set"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Ossesus+Set"
+                ]
+            }
+        ],
+        "AbandonedThrone": [
+            {
+                "eventType": "Point of Interest",
+                "eventName": [
+                    "Abandoned Throne"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Abandoned+Throne"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Key Item",
+                "eventName": [
+                    "Opalescent Shell"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Opalescent+Shell"
+                ]
+            }
+        ],
+        "GraveyardElf": [
+            {
+                "eventType": "Point of Interest: Merchant",
+                "eventName": [
+                    "Graveyard Elf"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Graveyard+Elf"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Ring",
+                "eventName": [
+                    "Grim Coil"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Grim+Coil"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward",
+                "eventName": [
+                    "Ring of the Unclean"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+the+Unclean"
+                ]
+            }
+        ],
+        "Flautist": [
+            {
+                "eventType": "Point of Interest: NPC",
+                "eventName": [
+                    "Flautist"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Flautist"
+                ]
+            },
+            {
+                "eventType": "Point of Interest: Reward",
+                "eventName": [
+                    "Heart of the Wolf"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Heart+of+the+Wolf"
+                ]
+            }
+        ],
+        "Ruins": [],
+        "StuckMerchant": [
+            {
+                "eventType": "Point of Interest: Merchant",
+                "eventName": [
+                    "Stuck Merchant"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Stuck+Merchant"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Melee Weapon",
+                "eventName": [
+                    "Spear"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Stuck+Merchant"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Leg Armor",
+                "eventName": [
+                    "Radiant Greaves"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Greaves"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Body Armor",
+                "eventName": [
+                    "Radiant Protector"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Radiant+Protector"
+                ]
+            },
+            {
+                "eventType": "Point of Interest: Key Item",
+                "eventName": [
+                    "Strange Curio"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Strange+Curio"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Ring",
+                "eventName": [
+                    "Guardian Ring"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Guardian's+Ring"
+                ]
+            }
+        ],
+        "Snow Ruins": [],
+        "VargylBones": [
+            {
+                "eventType": "Point of Interest",
+                "eventName": [
+                    "Felmourn Burrow"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Felmourn+Burrow"
+                ]
+            },
+            {
+                "eventType": "Point of Interest Reward: Melee Weapon",
+                "eventName": [
+                    "Frostborne"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Frostborne"
+                ]
+            }
+        ],
+        "Afterbirth": [
+            {
+                "eventType": "Point of Interest: Merchant",
+                "eventName": [
+                    "Krall Mother"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Krall+Mother"
+                ]
+            },
+            {
+                "eventType": "Sold Item: Ring",
+                "eventName": [
+                    "Scavenger's Ring"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Scavenger's+Ring"
+                ]
+            },
+            {
+                "eventType": "Quest Reward: Amulet",
+                "eventName": [
+                    "Blessed Necklace"
+                ],
+                "eventLink": [
+                    "https://remnantfromtheashes.wiki.fextralife.com/Blessed+Necklace"
+                ]
+            }
+        ]
+    },
+    "subEvents": {
+        "TraitBook": {
+            "eventType": "Item Drop",
+            "eventName": [
+                "Tome of Knowledge"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Tome+of+Knowledge"
+            ]
+        },
+        "Simulacrum": {
+            "eventType": "Item Drop",
+            "eventName": [
+                "Simulacrum"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Simulacrum"
+            ]
+        },
+        "AggressorsBane": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Aggressor's Bane"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Aggressor's+Bane"
+            ]
+        },
+        "BandOfCastor": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Band of Castor"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Castor"
+            ]
+        },
+        "BandOfPollux": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Band of Pollux"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Pollux"
+            ]
+        },
+        "BurdenOfTheGambler": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Burden of the Gambler"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Gambler"
+            ]
+        },
+        "GunslingersRing": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Gunslinger's Ring"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Gunslinger's+Ring"
+            ]
+        },
+        "Heartseeker": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Heartseeker"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Heartseeker"
+            ]
+        },
+        "PillarOfStone": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Pillar of Stone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Pillar+of+Stone"
+            ]
+        },
+        "RingOfEvasion": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Ring of Evasion"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Evasion"
+            ]
+        },
+        "Sagestone": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Sagestone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Sagestone"
+            ]
+        },
+        "StockpileCirclet": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Stockpile Circlet"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Stockpile+Circlet"
+            ]
+        },
+        "GunslingersCharm": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Gunslinger's Charm"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Gunslinger's+Charm"
+            ]
+        },
+        "Penitent": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Leto's Amulet"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Leto's+Amulet"
+            ]
+        },
+        "DriftersMask": {
+            "eventType": "Item Drop: Head Armor",
+            "eventName": [
+                "Drifter's Mask"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Drifter's+Mask"
+            ]
+        },
+        "StrangeCoin": {
+            "eventType": "Item Drop: Key Item",
+            "eventName": [
+                "Strange Coin"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Strange+Coin"
+            ]
+        },
+        "ReggiesRing": {
+            "eventType": "Item Drop: Key Item",
+            "eventName": [
+                "Tarnished Ring"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Tarnished+Ring"
+            ]
+        },
+        "RootNexus": null,
+        "BandOfStrength": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Band of Strength"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Band+of+Strength"
+            ]
+        },
+        "BurdenOfTheReckless": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Burden of the Reckless"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Reckless"
+            ]
+        },
+        "CompulsionLoop": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Compulsion Loop"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Compulsion+Loop"
+            ]
+        },
+        "DeceiversBand": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Deceiver's Band"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Deceiver's+Band"
+            ]
+        },
+        "EzlansBand": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Ezlan's Band"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Ezlan's+Band"
+            ]
+        },
+        "GravityStone": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Gravity Stone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Gravity+Stone"
+            ]
+        },
+        "HuntersHalo": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Hunter's Halo"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Halo"
+            ]
+        },
+        "LeechEmber": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Leech Ember"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Leech+Ember"
+            ]
+        },
+        "RingOfElusion": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Ring of Elusion"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Elusion"
+            ]
+        },
+        "BrutalMark": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Brutal Mark"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Brutal+Mark"
+            ]
+        },
+        "CleansingJewel": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Cleansing Jewel"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Cleansing+Jewel"
+            ]
+        },
+        "GalenicCharm": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Galenic Charm"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Galenic+Charm"
+            ]
+        },
+        "RadioactiveEmber": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Radioactive Ember"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Radioactive+Ember"
+            ]
+        },
+        "TalismanOfAnimosity": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Talisman of Animosity"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Talisman+of+Animosity"
+            ]
+        },
+        "GlowingRod": {
+            "eventType": "Item Drop: Key Item",
+            "eventName": [
+                "Armor Vault",
+                "Glowing Rod"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Armor+vault+(Vault+of+The+Herald)",
+                "https://remnantfromtheashes.wiki.fextralife.com/Glowing+Rod"
+            ]
+        },
+        "BloodFont": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Blood Font"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Blood+Font"
+            ]
+        },
+        "BurdenOfTheDevoted": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Burden of the Devoted"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Devoted"
+            ]
+        },
+        "DevouringLoop": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Devouring Loop"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Devouring+Loop"
+            ]
+        },
+        "RazorStone": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Razorstone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Razorstone"
+            ]
+        },
+        "AbrasiveAmulet": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Abrasive Amulet"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Abrasive+Amulet"
+            ]
+        },
+        "ButchersFetish": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Butcher's Fetish"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Butcher's+Fetish"
+            ]
+        },
+        "RockOfAnguish": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Rock of Anguish"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Rock+of+Anguish"
+            ]
+        },
+        "Sketterling": {
+            "eventType": "Sketterling Temple",
+            "eventName": [
+                " Vikorian Beetle"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Sketterling+Temple"
+            ]
+        },
+        "BurdenOfTheFollower": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Burden of the Follower"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Follower"
+            ]
+        },
+        "HuntersBand": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Hunter's Band"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Hunter's+Band"
+            ]
+        },
+        "KeepersRing": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Keeper's Ring"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Keeper's+Ring"
+            ]
+        },
+        "PearlOfLuminescence": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Pearl of Luminescence"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Pearl+of+Luminescence"
+            ]
+        },
+        "RestrictionCord": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Restriction Cord"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Restriction+Cord"
+            ]
+        },
+        "RingOfShadows": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Ring of Shadows"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Ring+of+Shadows"
+            ]
+        },
+        "SpiritStone": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Spirit Stone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Spirit+Stone"
+            ]
+        },
+        "StoneOfBalance": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Stone of Balance"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Stone+Of+Balance"
+            ]
+        },
+        "StalkersBrand": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Stalker's Brand"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Stalkers+Brand"
+            ]
+        },
+        "StormAmulet": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Storm Amulet"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Storm+Amulet"
+            ]
+        },
+        "VengeanceIdol": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Vengeance Idol"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Vengeance+Idol"
+            ]
+        },
+        "CreepersPeepers": {
+            "eventType": "Quest Reward: Hand Gun",
+            "eventName": [
+                "Creepers Peepers",
+                "Twin Shot"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Creeper's+Peepers",
+                "https://remnantfromtheashes.wiki.fextralife.com/Twin+Shot"
+            ]
+        },
+        "Packmaster": {
+            "eventType": "Key Item",
+            "eventName": [
+                "Packmaster's Tusk"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Master's+Tusk"
+            ]
+        },
+        "BurdenOfTheWarlord": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Burden of the Warlord"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Burden+of+the+Warlord"
+            ]
+        },
+        "SerpentsFang": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Serpent's Fang"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Serpent's+Fang"
+            ]
+        },
+        "VolatileGem": {
+            "eventType": "Item Drop: Ring",
+            "eventName": [
+                "Volatile Gem"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Volatile+Gem"
+            ]
+        },
+        "CharcoalNecklace": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Charcoal Necklace"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Charcoal+Necklace"
+            ]
+        },
+        "Driftstone": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Driftstone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Driftstone"
+            ]
+        },
+        "PolishedWhetstone": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Polished Whetstone"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Polished+Whetstone"
+            ]
+        },
+        "RazorwireNecklace": {
+            "eventType": "Item Drop: Amulet",
+            "eventName": [
+                "Razorwire Necklace"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Razorwire+Necklace"
+            ]
+        },
+        "KrallBaby": {
+            "eventType": "Unknown",
+            "eventName": [
+                "Krall Baby"
+            ],
+            "eventLink": [
+                "https://remnantfromtheashes.wiki.fextralife.com/Krall+Mother"
+            ]
+        }
+    }
+}
