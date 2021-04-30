@@ -1,10 +1,10 @@
 // After adventure mode is complete the website will display minified versions of the html, css, javascript, and jsons
 // TODO review areas for extra items (Control Rod)
 
-let itemInfo = null;
+let subEventInfo = null;
 let bossInfo = null;
-let dungeonInfo = null;
 let minibossInfo = null;
+let dungeonInfo = null;
 let siegeInfo = null;
 let pointOfInterestInfo = null;
 
@@ -18,76 +18,21 @@ class ConnectionError extends Error {
 
 // These just read the data for each category from the json files in the data folder
 // Now stored in global variables to make sure we only request the data once for each type
-async function initItemInfo() {
-  if (itemInfo === null) {
+async function initEventInfo() {
+  if (subEventInfo === null) {
     const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/items.json"
+      "https://eclipseblade.github.io/Remnant-World-Analyzer/events.json"
     );
     if (!response.ok) {
       throw new ConnectionError("Could Not Read Items");
     }
-    itemInfo = await response.json();
-  }
-  return itemInfo;
-}
-
-async function initBossInfo() {
-  if (bossInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/bosses.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Bosses");
-    }
-    bossInfo = await response.json();
-  }
-}
-
-async function initDungeonInfo() {
-  if (dungeonInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/dungeons.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Dungeons");
-    }
-    dungeonInfo = await response.json();
-  }
-}
-
-async function initMinibossInfo() {
-  if (minibossInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/minibosses.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Minibosses");
-    }
-    minibossInfo = await response.json();
-  }
-}
-
-async function initSiegeInfo() {
-  if (siegeInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/sieges.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Sieges");
-    }
-    siegeInfo = await response.json();
-  }
-}
-
-async function initPointOfInterestInfo() {
-  if (pointOfInterestInfo === null) {
-    const response = await fetch(
-      "https://eclipseblade.github.io/Remnant-World-Analyzer/data/pointOfInterests.json"
-    );
-    if (!response.ok) {
-      throw new ConnectionError("Could Not Read Point of Interests");
-    }
-    pointOfInterestInfo = await response.json();
+    const eventInfo = await response.json();
+    subEventInfo = eventInfo.subEvents;
+    bossInfo = eventInfo.bosses;
+    minibossInfo = eventInfo.minibosses;
+    dungeonInfo = eventInfo.dungeons;
+    siegeInfo = eventInfo.sieges;
+    pointOfInterestInfo = eventInfo.pointOfInterests;
   }
 }
 
@@ -161,12 +106,7 @@ async function analyzeAdventure(fileText) {
   advText.splice(0, 1);
 
   // Load data into global variables
-  await initItemInfo();
-  await initBossInfo();
-  await initDungeonInfo();
-  await initMinibossInfo();
-  await initSiegeInfo();
-  await initPointOfInterestInfo();
+  await initEventInfo();
 
   const overworldZone = {
     order: 5,
@@ -183,11 +123,11 @@ async function analyzeAdventure(fileText) {
     switch (eventInfo[0].toLowerCase()) {
       // An event is usual an item, but there are a few outliers like the sketterling temple
       case "event":
-        if (!(eventInfo[1] in itemInfo)) {
+        if (!(eventInfo[1] in subEventInfo)) {
           throw new Error("Invalid Item: " + eventInfo[1]);
         }
-        const itemEvent = deepCloneSubEvent(itemInfo[eventInfo[1]]);
-        if (itemEvent) {
+        const subEvent = deepCloneSubEvent(subEventInfo[eventInfo[1]]);
+        if (subEvent) {
           // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
           // At the moment, it does not seem possible to identify the drop of the red beetle
           if (eventInfo[1] === "Sketterling") {
@@ -206,19 +146,19 @@ async function analyzeAdventure(fileText) {
               throw new Error("Could Not Read Color of Sketterling");
             }
             // Check if the character after g in Bug is an _ or not
-            itemEvent.eventName[0] =
+            subEvent.eventName[0] =
               (fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red") +
-              itemEvent.eventName[0];
+              subEvent.eventName[0];
           }
 
           if (
             eventInfo[1] === "CreepersPeepers" ||
             eventInfo[1] === "Packmaster"
           ) {
-            overworldZone.eventDetails.push(itemEvent);
+            overworldZone.eventDetails.push(subEvent);
           } else {
             eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
-              itemEvent
+              subEvent
             );
           }
         }
