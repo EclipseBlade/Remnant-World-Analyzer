@@ -1,6 +1,5 @@
 // After adventure mode is complete the website will display minified versions of the html, css, javascript, and jsons
-// TODO review areas for extra items (Root Nexus), Control Rod
-// Review Item Events (Root Nexus)
+// TODO review areas for extra items (Control Rod)
 
 let itemInfo = null;
 let bossInfo = null;
@@ -188,39 +187,40 @@ async function analyzeAdventure(fileText) {
           throw new Error("Invalid Item: " + eventInfo[1]);
         }
         const itemEvent = deepCloneSubEvent(itemInfo[eventInfo[1]]);
+        if (itemEvent) {
+          // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
+          // At the moment, it does not seem possible to identify the drop of the red beetle
+          if (eventInfo[1] === "Sketterling") {
+            let beetleIndex = -1;
+            // Mar'Gosh's Lair means that a second Sketterling can spawn so we have to check for the spawns seperately
+            // This will break on more than 2 sketters (Not Sure If Possible)
+            if (eventInfo[2] === "Mines") {
+              beetleIndex = fileText.lastIndexOf(
+                "Sketterling_Bugs",
+                fileText.indexOf("Sketterling_Mines")
+              );
+            } else {
+              beetleIndex = fileText.lastIndexOf("Sketterling_Bugs");
+            }
+            if (beetleIndex === -1) {
+              throw new Error("Could Not Read Color of Sketterling");
+            }
+            // Check if the character after g in Bug is an _ or not
+            itemEvent.eventName[0] =
+              (fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red") +
+              itemEvent.eventName[0];
+          }
 
-        // We can check for the color of a Sketterling bug if we check if the temple spawns Sketterling_Bug.C or Sketterling_Bug_Armored.C
-        // At the moment, it does not seem possible to identify the drop of the red beetle
-        if (eventInfo[1] === "Sketterling") {
-          let beetleIndex = -1;
-          // Mar'Gosh's Lair means that a second Sketterling can spawn so we have to check for the spawns seperately
-          // This will break on more than 2 sketters (Not Sure If Possible)
-          if (eventInfo[2] === "Mines") {
-            beetleIndex = fileText.lastIndexOf(
-              "Sketterling_Bugs",
-              fileText.indexOf("Sketterling_Mines")
-            );
+          if (
+            eventInfo[1] === "CreepersPeepers" ||
+            eventInfo[1] === "Packmaster"
+          ) {
+            overworldZone.eventDetails.push(itemEvent);
           } else {
-            beetleIndex = fileText.lastIndexOf("Sketterling_Bugs");
+            eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
+              itemEvent
+            );
           }
-          if (beetleIndex === -1) {
-            throw new Error("Could Not Read Color of Sketterling");
-          }
-
-          // Check if the character after g in Bug is an _ or not
-          itemEvent.eventName[0] =
-            (fileText.charAt(beetleIndex + 48) === "_" ? "Black" : "Red") +
-            itemEvent.eventName[0];
-        }
-        if (
-          eventInfo[1] === "CreepersPeepers" ||
-          eventInfo[1] === "Packmaster"
-        ) {
-          overworldZone.eventDetails.push(itemEvent);
-        } else {
-          eventAccumulator[eventAccumulator.length - 1].eventDetails.push(
-            itemEvent
-          );
         }
         break;
       // A boss is the world boss like Singe, Claviger, Ixiillis, or The Ravager
@@ -351,31 +351,26 @@ function renderTable({ world, worldEvents }) {
     for (let i = 0; i < eventDetails.length; i++) {
       const { eventType, eventName, eventLink } = eventDetails[i];
 
-      let $row = `<tr><td>${world}</td><td>${zone[0]} `;
+      let $row = `<tr><td>${world}</td><td>${zone[0]}`;
       if (i < subAreaEvents) {
-        $row += `(${zone[1]})`;
+        $row += ` (${zone[1]})`;
       }
-      $row += `</td><td>${eventType}</td>`;
+      $row += `</td><td>${eventType}</td><td class="hyperlink">`;
 
-      if (eventLink.length === 3) {
-        $row += `<td class="hyperlink">
-                  <a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a> or
-                  <a href="${eventLink[1]}"  target="_blank">${eventName[1]}</a> or
-                  <a href="${eventLink[2]}"  target="_blank">${eventName[2]}</a>
-                </td>`;
-      } else if (eventLink.length === 2) {
-        $row += `<td class="hyperlink"><a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a>`;
-        if (eventName[1] === "Maul" || eventName[1] === "Wud") {
-          $row += " and ";
-        } else {
-          $row += ": ";
+      for (let i = 0; i < eventLink.length; i++) {
+        $row += `<a href="${eventLink[i]}"  target="_blank">${eventName[i]}</a>`;
+        if (i !== eventLink.length - 1) {
+          if (eventLink.length === 3) {
+            $row += " or ";
+          } else if (eventName[0] === "Houndmaster" || eventName[0] === "Wud") {
+            $row += " and ";
+          } else {
+            $row += ": ";
+          }
         }
-        $row += `<a href="${eventLink[1]}"  target="_blank">${eventName[1]}</a></td>`;
-      } else {
-        $row += `<td><a href="${eventLink[0]}"  target="_blank">${eventName[0]}</a></td>`;
       }
 
-      $row += "</tr>";
+      $row += "</td></tr>";
       $("#world-info").append($row);
     }
   }
